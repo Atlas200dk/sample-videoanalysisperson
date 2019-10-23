@@ -54,7 +54,7 @@ function download_code()
         fi
     fi
     echo "Download ezdvpp code..."
-    ezdvpp_download_url="https://github.com/Ascend/sdk-ezdvpp/archive/${ezdvpp_version}.tar.gz"
+    ezdvpp_download_url="https://gitee.com/Atlas200DK/sdk-ezdvpp/archive/${ezdvpp_version}.tar.gz"
     wget -O ${script_path}/${ezdvpp_version}.ing ${ezdvpp_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${ezdvpp_download_url} connection."
