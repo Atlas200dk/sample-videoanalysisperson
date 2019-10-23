@@ -17,7 +17,7 @@
 
 1.  <a name="zh-cn_topic_0182554628_li953280133816"></a>获取源码包。
 
-    将[https://github.com/Ascend/sample-videoanalysisperson](https://github.com/Ascend/sample-videoanalysisperson)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_/home/ascend/sample-videoanalysisperson_。
+    将[https://gitee.com/Atlas200DK/sample-videoanalysisperson](https://gitee.com/Atlas200DK/sample-videoanalysisperson)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_/home/ascend/sample-videoanalysisperson_。
 
 2.  <a name="zh-cn_topic_0182554628_li5507119145914"></a>获取此应用中所需要的原始网络模型。
 
@@ -39,7 +39,7 @@
     <td class="cellrowborder" valign="top" width="10.58%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0182554628_p688163513595"><a name="zh-cn_topic_0182554628_p688163513595"></a><a name="zh-cn_topic_0182554628_p688163513595"></a>人脸检测网络模型。</p>
     <p id="zh-cn_topic_0182554628_p1488735175914"><a name="zh-cn_topic_0182554628_p1488735175914"></a><a name="zh-cn_topic_0182554628_p1488735175914"></a>此模型是基于Caffe的Resnet10-SSD300模型转换后的网络模型。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p1588203519592"><a name="zh-cn_topic_0182554628_p1588203519592"></a><a name="zh-cn_topic_0182554628_p1588203519592"></a>请参考<a href="https://github.com/Ascend/models/tree/master/computer_vision/object_detect/face_detection" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/models/tree/master/computer_vision/object_detect/face_detection</a>目录中README.md下载原始网络模型文件及其对应的权重文件。</p>
+    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p1588203519592"><a name="zh-cn_topic_0182554628_p1588203519592"></a><a name="zh-cn_topic_0182554628_p1588203519592"></a>请参考<a href="https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/object_detect/face_detection" target="_blank" rel="noopener noreferrer">https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/object_detect/face_detection</a>目录中README.md下载原始网络模型文件及其对应的权重文件。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0182554628_row98823585915"><td class="cellrowborder" valign="top" width="15.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0182554628_p1188103555919"><a name="zh-cn_topic_0182554628_p1188103555919"></a><a name="zh-cn_topic_0182554628_p1188103555919"></a>pedestrian</p>
@@ -47,7 +47,7 @@
     <td class="cellrowborder" valign="top" width="10.58%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0182554628_p18889356598"><a name="zh-cn_topic_0182554628_p18889356598"></a><a name="zh-cn_topic_0182554628_p18889356598"></a>人体特征推理模型。</p>
     <p id="zh-cn_topic_0182554628_p48853545911"><a name="zh-cn_topic_0182554628_p48853545911"></a><a name="zh-cn_topic_0182554628_p48853545911"></a>基于Caffe的VeSPA模型。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p5881335145918"><a name="zh-cn_topic_0182554628_p5881335145918"></a><a name="zh-cn_topic_0182554628_p5881335145918"></a>请参考<a href="https://github.com/Ascend/models/tree/master/computer_vision/classification/pedestrian" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/models/tree/master/computer_vision/classification/pedestrian</a>目录中README.md下载原始网络模型文件及其对应的权重文件。</p>
+    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p5881335145918"><a name="zh-cn_topic_0182554628_p5881335145918"></a><a name="zh-cn_topic_0182554628_p5881335145918"></a>请参考<a href="https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/classification/pedestrian" target="_blank" rel="noopener noreferrer">https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/classification/pedestrian</a>目录中README.md下载原始网络模型文件及其对应的权重文件。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0182554628_row388153512593"><td class="cellrowborder" valign="top" width="15.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0182554628_p188811350596"><a name="zh-cn_topic_0182554628_p188811350596"></a><a name="zh-cn_topic_0182554628_p188811350596"></a>inception_age</p>
@@ -55,7 +55,7 @@
     <td class="cellrowborder" valign="top" width="10.58%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0182554628_p138803555914"><a name="zh-cn_topic_0182554628_p138803555914"></a><a name="zh-cn_topic_0182554628_p138803555914"></a>年龄识别网络模型。</p>
     <p id="zh-cn_topic_0182554628_p2882351595"><a name="zh-cn_topic_0182554628_p2882351595"></a><a name="zh-cn_topic_0182554628_p2882351595"></a>基于Tensorflow的Inception V3模型。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p78813518594"><a name="zh-cn_topic_0182554628_p78813518594"></a><a name="zh-cn_topic_0182554628_p78813518594"></a>请参考<a href="https://github.com/Ascend/models/tree/master/computer_vision/classification/inception_age" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/models/tree/master/computer_vision/classification/inception_age</a>目录中README.md下载原始网络PB模型文件。</p>
+    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p78813518594"><a name="zh-cn_topic_0182554628_p78813518594"></a><a name="zh-cn_topic_0182554628_p78813518594"></a>请参考<a href="https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/classification/inception_age" target="_blank" rel="noopener noreferrer">https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/classification/inception_age</a>目录中README.md下载原始网络PB模型文件。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0182554628_row1788163525912"><td class="cellrowborder" valign="top" width="15.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0182554628_p1788123518593"><a name="zh-cn_topic_0182554628_p1788123518593"></a><a name="zh-cn_topic_0182554628_p1788123518593"></a>inception_gender</p>
@@ -63,7 +63,7 @@
     <td class="cellrowborder" valign="top" width="10.58%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0182554628_p10884353596"><a name="zh-cn_topic_0182554628_p10884353596"></a><a name="zh-cn_topic_0182554628_p10884353596"></a>性别识别网络模型。</p>
     <p id="zh-cn_topic_0182554628_p1388133595913"><a name="zh-cn_topic_0182554628_p1388133595913"></a><a name="zh-cn_topic_0182554628_p1388133595913"></a>基于Tensorflow的Inception V3模型。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p1988103514599"><a name="zh-cn_topic_0182554628_p1988103514599"></a><a name="zh-cn_topic_0182554628_p1988103514599"></a>请参考<a href="https://github.com/Ascend/models/tree/master/computer_vision/classification/inception_gender" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/models/tree/master/computer_vision/classification/inception_gender</a>目录中README.md下载原始网络PB模型文件。</p>
+    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p1988103514599"><a name="zh-cn_topic_0182554628_p1988103514599"></a><a name="zh-cn_topic_0182554628_p1988103514599"></a>请参考<a href="https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/classification/inception_gender" target="_blank" rel="noopener noreferrer">https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/classification/inception_gender</a>目录中README.md下载原始网络PB模型文件。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0182554628_row19881135115914"><td class="cellrowborder" valign="top" width="15.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0182554628_p13881355593"><a name="zh-cn_topic_0182554628_p13881355593"></a><a name="zh-cn_topic_0182554628_p13881355593"></a>vgg_ssd</p>
@@ -72,7 +72,7 @@
     <p id="zh-cn_topic_0182554628_p588153519599"><a name="zh-cn_topic_0182554628_p588153519599"></a><a name="zh-cn_topic_0182554628_p588153519599"></a>基于Caffe的SSD512模型。</p>
     <p id="zh-cn_topic_0182554628_p158813355590"><a name="zh-cn_topic_0182554628_p158813355590"></a><a name="zh-cn_topic_0182554628_p158813355590"></a></p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p588183595913"><a name="zh-cn_topic_0182554628_p588183595913"></a><a name="zh-cn_topic_0182554628_p588183595913"></a>请参考<a href="https://github.com/Ascend/models/tree/master/computer_vision/object_detect/vgg_ssd" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/models/tree/master/computer_vision/object_detect/vgg_ssd</a>目录中README.md下载原始网络模型文件及其对应的权重文件。</p>
+    <td class="cellrowborder" valign="top" width="74.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p588183595913"><a name="zh-cn_topic_0182554628_p588183595913"></a><a name="zh-cn_topic_0182554628_p588183595913"></a>请参考<a href="https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/object_detect/vgg_ssd" target="_blank" rel="noopener noreferrer">https://gitee.com/HuaweiAscend/models/tree/master/computer_vision/object_detect/vgg_ssd</a>目录中README.md下载原始网络模型文件及其对应的权重文件。</p>
     </td>
     </tr>
     </tbody>
@@ -291,7 +291,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="33.373337333733375%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0182554628_p19318202171113"><a name="zh-cn_topic_0182554628_p19318202171113"></a><a name="zh-cn_topic_0182554628_p19318202171113"></a>对DVPP接口进行了封装，提供对图片/视频的处理能力。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p17318132171116"><a name="zh-cn_topic_0182554628_p17318132171116"></a><a name="zh-cn_topic_0182554628_p17318132171116"></a><a href="https://github.com/Ascend/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-ezdvpp</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p17318132171116"><a name="zh-cn_topic_0182554628_p17318132171116"></a><a name="zh-cn_topic_0182554628_p17318132171116"></a><a href="https://gitee.com/Atlas200DK/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-ezdvpp</a></p>
 <p id="zh-cn_topic_0182554628_p231814214119"><a name="zh-cn_topic_0182554628_p231814214119"></a><a name="zh-cn_topic_0182554628_p231814214119"></a>下载后请保持文件夹名称为ezdvpp。</p>
 </td>
 </tr>
@@ -299,7 +299,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="33.373337333733375%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0182554628_p13318142101119"><a name="zh-cn_topic_0182554628_p13318142101119"></a><a name="zh-cn_topic_0182554628_p13318142101119"></a>与Presenter Server进行交互的API接口。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p63185271115"><a name="zh-cn_topic_0182554628_p63185271115"></a><a name="zh-cn_topic_0182554628_p63185271115"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p63185271115"><a name="zh-cn_topic_0182554628_p63185271115"></a><a name="zh-cn_topic_0182554628_p63185271115"></a><a href="https://gitee.com/Atlas200DK/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-presenter/tree/master</a></p>
 <p id="zh-cn_topic_0182554628_p1531819251119"><a name="zh-cn_topic_0182554628_p1531819251119"></a><a name="zh-cn_topic_0182554628_p1531819251119"></a>请获取此路径下的presenteragent文件夹，下载后请保持文件夹名称为presenteragent。</p>
 </td>
 </tr>
