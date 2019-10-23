@@ -54,22 +54,24 @@ function download_code()
         fi
     fi
     echo "Download presenteragent code..."
-    presenteragent_download_url="https://github.com/Ascend/sdk-presenter/releases/download/${presenteragent_version}/presenteragent-${presenteragent_version}.zip"
-    wget -O ${script_path}/presenteragent-${presenteragent_version}.ing ${presenteragent_download_url} --no-check-certificate
+    presenter_download_url="https://gitee.com/Atlas200DK/sdk-presenter/repository/archive/1.1.2?format=zip"
+    wget -O ${script_path}/presenter-${presenteragent_version}.ing ${presenter_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
-        echo "ERROR: download failed, please check ${presenteragent_download_url} connection."
+        echo "ERROR: download failed, please check ${presenter_download_url} connection."
         return 1
     fi
 
-    mv ${script_path}/presenteragent-${presenteragent_version}.ing ${script_path}/presenteragent-${presenteragent_version}.zip
-    unzip ${script_path}/presenteragent-${presenteragent_version}.zip -d ${script_path} 1>/dev/null
+    mv ${script_path}/presenter-${presenteragent_version}.ing ${script_path}/presenter-${presenteragent_version}.zip
+    unzip ${script_path}/presenter-${presenteragent_version}.zip -d ${script_path} 1>/dev/null
     if [[ $? -ne 0 ]];then
-        echo "ERROR: uncompress presenteragent tar.gz file failed, please check ${presenteragent_download_url} connection."
+        echo "ERROR: uncompress presenteragent tar.gz file failed, please check ${presenter_download_url} connection."
         return 1
     fi
-    mv ${script_path}/presenteragent-${presenteragent_version} ${script_path}/presenteragent
-    rm -rf ${script_path}/presenteragent-${presenteragent_version}.zip
-    rm -rf ${script_path}/presenteragent-${presenteragent_version}.ing
+    mkdir ${script_path}/presenteragent
+    cp -rf  ${script_path}/sdk-presenter/presenteragent/* ${script_path}/presenteragent
+    rm -rf ${script_path}/presenter-${presenteragent_version}.zip
+    rm -rf ${script_path}/sdk-presenter
+    rm -rf ${script_path}/presenter-${presenteragent_version}.ing
     return 0
 
 }
