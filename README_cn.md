@@ -307,7 +307,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="33.373337333733375%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0182554628_p23198241119"><a name="zh-cn_topic_0182554628_p23198241119"></a><a name="zh-cn_topic_0182554628_p23198241119"></a>实现对视频文件的解封</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p18319926114"><a name="zh-cn_topic_0182554628_p18319926114"></a><a name="zh-cn_topic_0182554628_p18319926114"></a>ffmpeg 4.0代码下载地址：<a href="https://github.com/FFmpeg/FFmpeg/tree/release/4.0" target="_blank" rel="noopener noreferrer">https://github.com/FFmpeg/FFmpeg/tree/release/4.0</a>。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0182554628_p18319926114"><a name="zh-cn_topic_0182554628_p18319926114"></a><a name="zh-cn_topic_0182554628_p18319926114"></a>ffmpeg 4.0代码下载地址：<a href="https://gitee.com/mirrors/ffmpeg/tree/release%2F4.0/" target="_blank" rel="noopener noreferrer">https://gitee.com/mirrors/ffmpeg/tree/release%2F4.0/</a>。</p>
 <p id="zh-cn_topic_0182554628_p731912201113"><a name="zh-cn_topic_0182554628_p731912201113"></a><a name="zh-cn_topic_0182554628_p731912201113"></a>下载后，目录名称请使用ffmpeg。</p>
 </td>
 </tr>
