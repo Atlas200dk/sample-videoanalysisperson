@@ -138,7 +138,7 @@
     -   _host\_ip_：对于Atlas 200 DK开发者板，即为开发者板的IP地址。对于AI加速云服务器，即为Host侧的IP地址。
 
     -   model\_mode代表模型文件的部署方式，默认为internet。
-        -   local：若Mind Studio所在Ubuntu系统未连接网络，请使用local模式，执行此命令前，需要参考[依赖代码库下载](#zh-cn_topic_0182554628_section13807155164319)将依赖代码库的下载到“/home/ascend/sample-videoanalysisperson/script“目录下。
+        -   local：若Mind Studio所在Ubuntu系统未连接网络，请使用local模式，执行此命令前，需要参考[依赖代码库下载](#zh-cn_topic_0182554628_section13807155164319)将依赖代码库的下载到“sample-videoanalysisperson/script“目录下。
         -   internet：在线部署，若Mind Studio所在Ubuntu系统已连接网络，请使用internet模式，在线下载依赖软件库。
 
 
