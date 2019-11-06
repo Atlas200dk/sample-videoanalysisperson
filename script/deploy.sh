@@ -1,6 +1,6 @@
 #!/bin/bash
 script_path="$( cd "$(dirname "$0")" ; pwd -P )"
-app_path="${script_path}"
+app_path="${script_path}/../src"
 
 
 . ${script_path}/func_util.sh
@@ -17,14 +17,14 @@ check_param_configure()
             echo "please check your param_configure.conf to make sure that parameters remote_host and  presenter_view_app_name must have a value"
         else
             echo "please check your param_configure.conf to make sure that there must be a value between two parameters video_path_of_host and rtsp_video_stream"
-        return 1
+        	return 1
         fi
     fi
 
     #get and check format of remost_host ip
     check_remote_host
     if [ $? -ne 0 ];then
-	return 1
+		return 1
     fi
 
     #check format of presenter_view_app_name
@@ -35,6 +35,30 @@ check_param_configure()
     fi
 }
 
+function build_commen()
+{
+	echo "build commen lib..."
+    bash ${script_path}/build_ezdvpp.sh ${remote_host}
+    if [ $? -ne 0 ];then
+        echo "ERROR: Failed to deploy ezdvpp"
+        return 1
+    fi
+
+    bash ${script_path}/build_presenteragent.sh ${remote_host}
+    if [ $? -ne 0 ];then
+        echo "ERROR: Failed to deploy presenteragent"
+        return 1
+    fi
+
+    bash ${script_path}/build_ffmpeg.sh ${remote_host}
+    if [ $? -ne 0 ];then
+        echo "ERROR: Failed to deploy ffmpeg"
+        return 1
+    fi
+
+    return 0
+}
+
 function main()
 {
     echo "Modify param information in graph.config..."
@@ -43,15 +67,46 @@ function main()
         return 1
     fi
 
+    if tmp=`wc -l ${script_path}/Tag 2>/dev/null`;then
+        line=`echo $tmp | awk -F' ' '{print $1}'`
+        if [[ $line -ne 1 ]];then
+            rm -rf ${script_path}/Tag
+            build_commen
+            if [ $? -ne 0 ];then
+                echo "ERROR: Failed to deploy commen lib"
+                return 1
+            else
+                echo "success" > ${script_path}/Tag
+            fi
+        else
+            [[ "success" = `cat ${script_path}/Tag | grep "^success$"` ]] || build_commen
+            if [ $? -ne 0 ];then
+                echo "ERROR: Failed to deploy commen lib"
+                return 1
+            else
+                echo "success" > ${script_path}/Tag
+            fi
+        fi
+    else
+        build_commen
+        if [ $? -ne 0 ];then
+            echo "ERROR: Failed to deploy commen lib"
+            return 1
+        else
+            echo "success" > ${script_path}/Tag
+        fi
+    fi
+
+
     echo "echo Prepare app configuration..."
     parse_presenter_altasdk_ip ${remote_host}
-    presenter_port=`grep presenter_server_port ${app_path}/../presenterserver/video_analysis/config/config.conf | awk -F '=' '{print $2}' | sed 's/[^0-9]//g'`
+    presenter_port=`grep presenter_server_port ${script_path}/../presenterserver/video_analysis/config/config.conf | awk -F '=' '{print $2}' | sed 's/[^0-9]//g'`
     if [ $? -ne 0 ];then
-        echo "ERROR: get presenter server port failed, please check ${app_path}/../presenterserver/video_analysis/config/config.conf."
+        echo "ERROR: get presenter server port failed, please check ${script_path}/../presenterserver/video_analysis/config/config.conf."
         return 1
     fi
 
-    cp -r ${app_path}/graph_template.config ${app_path}/graph.config
+    cp -r ${script_path}/graph_template.config ${app_path}/graph.config
 
     sed -i "s#\${template_channel1}#${video_path_of_host}#g" ${app_path}/graph.config
     sed -i "s#\${template_channel2}#${rtsp_video_stream}#g" ${app_path}/graph.config

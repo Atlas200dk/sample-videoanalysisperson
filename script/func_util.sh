@@ -1,12 +1,12 @@
 #!/bin/bash 
 
-script_path="$( cd "$(dirname "$0")" ; pwd -P )"
-app_path="${script_path}/"
+script_path="$( cd "$(dirname ${BASH_SOURCE})" ; pwd -P )"
+remote_port="22118"
+DDK_BIN="$DDK_HOME/uihost/bin"
 tools_path="${script_path}/.."
 
-
 function check_python3_lib()
-{    
+{
     echo "Install python3 libs: pip3 install -r ${tools_path}/presenterserver/requirements..."
 
     tornado_obj=`cat ${tools_path}/presenterserver/requirements | grep tornado | awk -F'[ =]+' '{print $2}'`
@@ -14,7 +14,7 @@ function check_python3_lib()
         echo "ERROR: please check your env."
         return 1
     elif [ 5.1.0 = ${tornado_obj} ];then
-	tornado_obj=5.1
+		tornado_obj=5.1
     fi
 
 
@@ -31,49 +31,49 @@ function check_python3_lib()
     fi
     
     if tornado=`python3 -c "import tornado;print(tornado.version)" 2>/dev/null`;then
-	if [ ${tornado} != ${tornado_obj} ];then
-	    pip3 install tornado==${tornado_obj} 2>/dev/null
-     	    if [ $? -ne 0 ];then
-        	echo "ERROR: install tornado failed, please check your env."
-        	return 1
-            fi
-	fi
+		if [ ${tornado} != ${tornado_obj} ];then
+	    	pip3 install tornado==${tornado_obj} 2>/dev/null
+     		if [ $? -ne 0 ];then
+        		echo "ERROR: install tornado failed, please check your env."
+        		return 1
+        	fi
+		fi
     else
-	pip3 install tornado==${tornado_obj} 2>/dev/null
-	if [ $? -ne 0 ];then
-	    echo "ERROR: install tornado failed, please check your env."
+		pip3 install tornado==${tornado_obj} 2>/dev/null
+		if [ $? -ne 0 ];then
+	    	echo "ERROR: install tornado failed, please check your env."
             return 1
         fi
     fi 
 
     if protobuf=`python3 -c "import google.protobuf;print(google.protobuf.__version__)" 2>/dev/null`;then
-	if [ ${protobuf} != ${protobuf_obj} ];then
-	    pip3 install protobuf==${protobuf_obj} 2>/dev/null
+		if [ ${protobuf} != ${protobuf_obj} ];then
+	    	pip3 install protobuf==${protobuf_obj} 2>/dev/null
      	    if [ $? -ne 0 ];then
-        	echo "ERROR: install protobuf failed, please check your env."
-        	return 1
+        		echo "ERROR: install protobuf failed, please check your env."
+        		return 1
             fi
-	fi
+		fi
     else
-	pip3 install protobuf==${protobuf_obj} 2>/dev/null
-	if [ $? -ne 0 ];then
-	    echo "ERROR: install protobuf failed, please check your env."
+		pip3 install protobuf==${protobuf_obj} 2>/dev/null
+		if [ $? -ne 0 ];then
+	    	echo "ERROR: install protobuf failed, please check your env."
             return 1
         fi
     fi 
     
     if numpy=`python3 -c "import numpy;print(numpy.__version__)" 2>/dev/null`;then
-	if [ ${numpy} != ${numpy_obj} ];then
-	    pip3 install numpy==${numpy_obj} 2>/dev/null
+		if [ ${numpy} != ${numpy_obj} ];then
+	    	pip3 install numpy==${numpy_obj} 2>/dev/null
      	    if [ $? -ne 0 ];then
-        	echo "ERROR: install numpy failed, please check your env."
-        	return 1
+        		echo "ERROR: install numpy failed, please check your env."
+        		return 1
             fi
-	fi
+		fi
     else
-	pip3 install numpy==${numpy_obj} 2>/dev/null
-	if [ $? -ne 0 ];then
-	    echo "ERROR: install numpy failed, please check your env."
+		pip3 install numpy==${numpy_obj} 2>/dev/null
+		if [ $? -ne 0 ];then
+	    	echo "ERROR: install numpy failed, please check your env."
             return 1
         fi
     fi 
@@ -82,12 +82,117 @@ function check_python3_lib()
     echo "python3 libs have benn prepared."
 }
 
+# ************************check remote file****************************************
+# Description:  upload a file
+# $1: remote file(relative ~/xxxxx)
+# ******************************************************************************
+function check_remote_file()
+{
+    filePath=$1
+    if [ ! -n ${filePath} ];then
+        return 2
+    fi
+    [[ $DDK_HOME = "" ]] && (echo "ERROR: invalid DDK_bin path, please make sure your \$DDK_HOME path is right.";return 2) 
+    ret=`${DDK_BIN}/IDE-daemon-client --host ${remote_host}:${remote_port} --hostcmd "wc -l ${filePath}"`
+    if [[ $? -ne 0 ]];then
+        return 1
+    fi
+
+    return 0
+}
+
+
+# ************************uplooad file****************************************
+# Description:  upload a file
+# $1: local file(absolute)
+# $2: remote file path
+# ******************************************************************************
+function upload_file()
+{
+    local_file=$1
+    remote_path=$2
+
+    file_name=`basename ${local_file}`
+    remote_file="${remote_path}/${file_name}"
+
+    #check remote path
+    check_remote_file ${remote_file}
+
+    #check whether overwrite remote file
+    if [[ $? -eq 0 ]];then
+        if [[ ${is_overwrite} == "false" ]];then
+            echo "${remote_file} already exists, skip to upload it."
+            return 0
+        else
+            ret=`${DDK_BIN}/IDE-daemon-client --host ${remote_host}:${remote_port} --hostcmd "rm ${remote_file}"`
+            if [[ $? -ne 0 ]];then
+                echo "ERROR: delete ${remote_host}:${remote_file} failed, please make sure your remote_host ip is right."
+                return 1
+            fi
+        fi
+	elif [[ $? -eq 2 ]];then
+		return 1
+	fi
+    	
+
+    ret=`${DDK_BIN}/IDE-daemon-client --host ${remote_host}:${remote_port} --hostcmd "mkdir -p ${remote_path}"`
+    if [[ $? -ne 0 ]];then
+        echo "ERROR: mkdir ${remote_host}:${remote_path} failed, please make sure your remote_host ip is right."
+        return 1
+    fi
+
+    #copy to remote path
+    ret=`${DDK_BIN}/IDE-daemon-client --host ${remote_host}:${remote_port} --sync ${local_file} ${remote_path}`
+    if [[ $? -ne 0 ]];then
+        echo "ERROR: sync ${local_file} to ${remote_host}:${remote_path} failed, please make sure your remote_host ip is right."
+        return 1
+    fi
+    return 0
+}
+
+
+# ************************uplooad tar.gz file****************************************
+# Description:  upload a file
+# $1: local file(absolute)
+# $2: remote path
+# $3: is_uncompress(true/false, default:true)
+# ******************************************************************************
+function upload_tar_file()
+{
+    local_file=$1
+    remote_path=$2
+
+    file_name=`basename ${local_file}`
+    remote_file="${remote_path}/${file_name}"
+
+    upload_file ${local_file} ${remote_path}
+    if [[ $? -ne 0 ]];then
+        return 1
+    fi
+
+    #uncompress tar.gz file
+    if [[ ${is_uncompress}"X" != "falseX" ]];then
+        ret=`${DDK_BIN}/IDE-daemon-client --host ${remote_host}:${remote_port} --hostcmd "tar -xvf ${remote_file} -C ${remote_path}/"`
+        if [[ $? -ne 0 ]];then
+            echo "ERROR: uncompress ${remote_host}:${remote_file} failed, please make sure your remote_host ip is right."
+            return 1
+        fi
+
+        ret=`${DDK_BIN}/IDE-daemon-client --host ${remote_host}:${remote_port} --hostcmd "rm ${remote_file}"`
+        if [[ $? -ne 0 ]];then
+            echo "ERROR: delete ${remote_host}:${remote_file} failed, please make sure your remote_host ip is right."
+            return 1
+        fi
+    fi
+    return 0
+
+}
 
 
 function check_remote_host()
 {
     #check format of remost_host ip
-    remote_host=`cat ${app_path}/param_configure.conf | grep "remote_host" | awk -F'[ =]+' '{print $2}'`
+    remote_host=`cat ${script_path}/../src/param_configure.conf | grep "remote_host" | awk -F'[ =]+' '{print $2}'`
     if [[ ${remote_host} = "" ]];then
         echo "please check your param_configure.conf to make sure that each parameter has a value"
         return 1
@@ -254,9 +359,4 @@ function check_ip_addr()
    done
    return 0
 }
-
-
-
-
-
 
