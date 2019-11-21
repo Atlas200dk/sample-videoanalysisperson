@@ -716,7 +716,7 @@ HIAI_StatusT ObjectDetectionInferenceEngine::HandleFinishedData(
       ObjectDetectInference();
     }
   }
-
+/*
   // destroy dvpp api used for channel1
   if (dvpp_api_channel1_ != nullptr) {
     DestroyVdecApi(dvpp_api_channel1_, 0);
@@ -725,7 +725,7 @@ HIAI_StatusT ObjectDetectionInferenceEngine::HandleFinishedData(
   if (dvpp_api_channel2_ != nullptr) {
     DestroyVdecApi(dvpp_api_channel2_, 0);
   }
-
+*/
   // sleep 100ms wait for dvpp finish last frame convert
   usleep(kWaitTimeLong);
 
