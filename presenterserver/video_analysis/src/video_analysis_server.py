@@ -163,13 +163,13 @@ class VideoAnalysisServer(PresenterSocketServer):
         app_id = request.id
         app_type = request.type
         # check app id if exist
-        app_dir = os.path.join(self.storage_dir, app_id)
-        if os.path.isdir(app_dir):
-            logging.error("App %s is already exist.", app_id)
-            response.ret = pb2.kErrorAppRegisterExist
-            response.message = "App {} is already exist.".format(app_id)
-            self.send_message(conn, response, msg_name)
-        elif self.app_manager.get_app_num() >= self.max_app_num:
+        #app_dir = os.path.join(self.storage_dir, app_id)
+        #if os.path.isdir(app_dir):
+        #    logging.error("App %s is already exist.", app_id)
+        #    response.ret = pb2.kErrorAppRegisterExist
+        #    response.message = "App {} is already exist.".format(app_id)
+        #    self.send_message(conn, response, msg_name)
+        if self.app_manager.get_app_num() >= self.max_app_num:
             logging.error("App number reach the upper limit")
             response.ret = pb2.kErrorAppRegisterLimit
             response.message = "App number reach the upper limit"

@@ -107,7 +107,8 @@ class AppManager():
         with self.app_list_lock:
             for i in range(len(self.app_list)):
                 if self.app_list[i].app_id == app_id:
-                    return False
+                    logging.info("App %s is already exist.", app_id)
+                    return True
 
             app = App(app_id, socket)
             self.app_list.append(app)
