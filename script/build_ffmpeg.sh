@@ -12,7 +12,7 @@ function download_code()
         return 0
     else 
         echo "Download ffmpeg code..."
-        ffmpeg_download_url="https://codeload.github.com/FFmpeg/FFmpeg/tar.gz/${ffmpeg_version}"
+        ffmpeg_download_url="https://gitee.com/mirrors/ffmpeg/repository/archive/${ffmpeg_version}?format=tar.gz"
         wget -O ${script_path}/${ffmpeg_version}.ing ${ffmpeg_download_url} --no-check-certificate
         if [[ $? -ne 0 ]];then
             echo "ERROR: download failed, please check ${ffmpeg_download_url} connection."
@@ -26,7 +26,6 @@ function download_code()
         echo "ERROR: uncompress ffmpeg tar.gz file failed, please check ${ffmpeg_download_url} connection."
         return 1
     fi
-    mv ${script_path}/FFmpeg-${ffmpeg_version} ${script_path}/ffmpeg
     rm -rf ${script_path}/${ffmpeg_version}
     rm -rf ${script_path}/${ffmpeg_version}.ing
     return 0
