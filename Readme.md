@@ -15,11 +15,11 @@
 
 1.  <a name="zh-cn_topic_0203223281_li953280133816"></a>获取源码包。
 
-    将[https://gitee.com/Atlas200DK/sample-videoanalysisperson/tree/1.3x.0.0/](https://gitee.com/Atlas200DK/sample-videoanalysisperson/tree/1.3x.0.0/)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_$HOME/AscendProjects/sample-videoanalysisperson_。
+    将[https://gitee.com/Atlas200DK/sample-videoanalysisperson/tree/1.3x.0.0/](https://gitee.com/Atlas200DK/sample-videoanalysisperson/tree/1.3x.0.0/)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/AscendProjects/sample-videoanalysisperson。
 
 2.  <a name="zh-cn_topic_0203223281_li5507119145914"></a>获取此应用中所需要的原始网络模型。
 
-    参考[表1](#zh-cn_topic_0203223281_table1193115345597)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，这两个文件必须存放到同一个目录下。例如：_$HOME/models/videoanalysispersion_。
+    参考[表1](#zh-cn_topic_0203223281_table1193115345597)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，这两个文件必须存放到同一个目录下。例如：$HOME/models/videoanalysispersion。
 
     **表 1**  人体检测应用中使用模型
 
@@ -110,7 +110,7 @@
 
         **export tools\_version=_1.31.X.X_**
 
-        **export DDK\_HOME=$HOME/.mindstudio/huawei/ddk/_1.31.X.X_/ddk**
+        **export DDK\_HOME=\\$HOME/.mindstudio/huawei/ddk/\\$tools\_version/ddk**
 
         **export NPU\_DEVICE\_LIB=$DDK\_HOME/../RC/host-aarch64\_Ubuntu16.04.3/lib**
 
@@ -177,11 +177,11 @@
 
             此时在DetectionOutput层的Suggestion中选择SSDDetectionOutput，并点击Retry。
 
-            模型转换成功后，后缀为.om的离线模型存放地址为_$HOME/modelzoo/XXX/device_。
+            模型转换成功后，后缀为.om的离线模型存放地址为：$HOME/modelzoo/XXX/device。
 
             >![](public_sys-resources/icon-note.gif) **说明：**   
             >-   Mindstudio模型转换中每一步的具体意义和参数说明可以参考[https://ascend.huawei.com/doc/mindstudio/2.1.0\(beta\)/zh/zh-cn\_topic\_0188462651.html](https://ascend.huawei.com/doc/mindstudio/2.1.0(beta)/zh/zh-cn_topic_0188462651.html)  
-            >-   XXX表示当前转换的模型名称，如face\_detection.om存放地址为$HOME/modelzoo/face\_detection/device。  
+            >-   XXX表示当前转换的模型名称，如face\_detection.om存放地址为：$HOME/modelzoo/face\_detection/device。  
 
 
     -   命令行模式下模型转换。
@@ -216,7 +216,7 @@
 
 1.  打开对应的工程。
 
-    以Mind Studio安装用户在命令行中进入安装包解压后的“MindStudio-ubuntu/bin”目录，如$HOME/MindStudio-ubuntu/bin。执行如下命令启动Mind Studio
+    以Mind Studio安装用户在命令行中进入安装包解压后的“MindStudio-ubuntu/bin”目录，如：$HOME/MindStudio-ubuntu/bin。执行如下命令启动Mind Studio
 
     **./MindStudio.sh**
 
@@ -394,9 +394,9 @@
 
     1.  请确保视频解析数据存储路径中内容已经清空。
 
-        例如：视频解析数据存储路径为/home/ascend/videoperson\_storage/video，其中/home/ascend/videoperson\_storage是执行[步骤4](#zh-cn_topic_0203223281_li499911453439)时配置的“Please input a absolute path to storage video analysis data”的值，video为**param\_configure.conf**配置文件中参数**presenter\_view\_app\_name**的值。
+        例如：视频解析数据存储路径为$HOME/videoperson\_storage/video，其中$HOME/videoperson\_storage是执行[步骤4](#zh-cn_topic_0203223281_li499911453439)时配置的“Please input a absolute path to storage video analysis data”的值，video为**param\_configure.conf**配置文件中参数**presenter\_view\_app\_name**的值。
 
-        满足此条件情况下，无需重启Presenter Server，直接重新执行**Run \> Run** **'sample-videoanalysisperson'**运行应用程序即可。
+        满足此条件情况下，无需重启Presenter Server，直接重新执行**Run \> Run 'sample-videoanalysisperson'**运行应用程序即可。
 
     2.  视频解析数据存储路径中如果已有数据且不想删除，可以修改**param\_configure.conf**配置文件中**presenter\_view\_app\_name**参数的值，然后在Mind Studio界面中重新执行**Build \> Rebuild**，再执行**Run \> Run 'sample-videoanalysisperson'**即可。
 
