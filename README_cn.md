@@ -17,11 +17,11 @@
 
 1.  <a name="zh-cn_topic_0182554628_li953280133816"></a>获取源码包。
 
-    将[https://gitee.com/Atlas200DK/sample-videoanalysisperson](https://gitee.com/Atlas200DK/sample-videoanalysisperson)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_/home/ascend/sample-videoanalysisperson_。
+    将[https://gitee.com/Atlas200DK/sample-videoanalysisperson](https://gitee.com/Atlas200DK/sample-videoanalysisperson)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/sample-videoanalysisperson。
 
 2.  <a name="zh-cn_topic_0182554628_li5507119145914"></a>获取此应用中所需要的原始网络模型。
 
-    参考[表1](#zh-cn_topic_0182554628_table1193115345597)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，例如$HOME/ascend/models/videoanalysispersion。
+    参考[表1](#zh-cn_topic_0182554628_table1193115345597)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，例如：$HOME/ascend/models/videoanalysispersion。
 
     **表 1**  人体检测应用中使用模型
 
@@ -103,7 +103,7 @@
 
         此时在DetectionOutput层的Suggestion中选择SSDDetectionOutput，并点击Retry。
 
-        模型转换成功后，后缀为.om的Davinci模型存放地址为$HOME/tools/che/model-zoo/my-model/xxx。
+        模型转换成功后，后缀为.om的Davinci模型存放地址为：$HOME/tools/che/model-zoo/my-model/xxx。
 
 
 4.  将转换好的模型文件（.om文件）上传到[1](#zh-cn_topic_0182554628_li953280133816)中源码所在路径的“sample-videoanalysisperson/script”目录下。
@@ -113,12 +113,11 @@
 
     执行如下命令在最后一行添加DDK\_HOME及LD\_LIBRARY\_PATH的环境变量。
 
-    **export DDK\_HOME=/home/XXX/tools/che/ddk/ddk**
+    **export DDK\_HOME=$HOME/tools/che/ddk/ddk**
 
     **export LD\_LIBRARY\_PATH=$DDK\_HOME/uihost/lib**
 
     >![](doc/source/img/icon-note.gif) **说明：**   
-    >-   XXX为Mind Studio安装用户，/home/XXX/tools为DDK默认安装路径。  
     >-   如果此环境变量已经添加，则此步骤可跳过。  
 
     输入:wq!保存退出。
@@ -130,7 +129,7 @@
 
 ## 部署<a name="zh-cn_topic_0182554628_section1759513564117"></a>
 
-1.  以Mind Studio安装用户进入人体检测应用代码所在根目录，如_/home/ascend/sample-videoanalysisperson_。
+1.  以Mind Studio安装用户进入人体检测应用代码所在根目录，如：$HOME/sample-videoanalysisperson。
 2.  <a name="zh-cn_topic_0182554628_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、Presenter Server服务器的配置等操作，其中Presenter Server用于接收Application发送过来的数据并通过浏览器进行结果展示。
 
     **bash deploy.sh **_host\_ip_ _model\_mode_
@@ -197,7 +196,7 @@
 
 1.  运行Video Analysis程序。
 
-    在“/home/ascend/sample-videoanalysisperson“目录下执行如下命令运行Video Analysis应用程序。
+    在“$HOME/sample-videoanalysisperson“目录下执行如下命令运行Video Analysis应用程序。
 
     **bash run\_videoanalysispersonapp.sh** _host\_ip_ _presenter\_view\_appname_ _channel1_ _[channel2]_   &
 
