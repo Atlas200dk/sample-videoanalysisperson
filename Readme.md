@@ -131,9 +131,9 @@
         1.  在Mind Studio操作界面的顶部菜单栏中选择**Tool \> Convert Model**，进入模型转换界面。
         2.  在弹出的**Model** **Convert**操作界面中，进行模型转换配置。
             -   Model File选择[步骤2](#zh-cn_topic_0203223281_li5507119145914)中下载的模型文件，此时会自动匹配到权重文件并填写在Weight File中。
-            -   Model Name填写为[表1](#zh-cn_topic_0203223281_table1193115345597)中对应的模型名称**。**
+            -   Model Name填写为[表1](#zh-cn_topic_0203223281_table1193115345597)中对应的模型名称。
             -   Tensorflow模型转换时，需要手动填写input shape中的N值。W、H、C有默认值，无需填写。
-            -   Pedestrian模型中AIPP配置中的**Input Image Size\[W\]\[H\]**需要分别修改为256、240，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8
+            -   Pedestrian模型中AIPP配置中的**Input Image Size**需要分别修改为256、240，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8
 
                 **图 2**  Pedestrian模型转换时AIPP配置<a name="zh-cn_topic_0203223281_fig15011753113814"></a>  
                 ![](figures/Pedestrian模型转换时AIPP配置.png "Pedestrian模型转换时AIPP配置")
@@ -144,7 +144,7 @@
                     **图 3**  inception\_age模型转换时Nodes配置<a name="zh-cn_topic_0203223281_fig1336219448573"></a>  
                     ![](figures/inception_age模型转换时Nodes配置.png "inception_age模型转换时Nodes配置")
 
-                -   AIPP配置中的**Input Image Size\[W\]\[H\]**需要分别修改为256,240 此处需要做128\*16对齐，**Model Image Format**  选择BGR888\_U8。
+                -   AIPP配置中的**Input Image Size**需要分别修改为256,240 此处需要做128\*16对齐，**Model Image Format**  选择BGR888\_U8。
 
                     **图 4**  inception\_age模型转换时AIPP配置<a name="zh-cn_topic_0203223281_fig334910264011"></a>  
                     ![](figures/inception_age模型转换时AIPP配置.png "inception_age模型转换时AIPP配置")
@@ -155,11 +155,11 @@
                     **图 5**  inception\_gender模型转换时Nodes配置<a name="zh-cn_topic_0203223281_fig1136210442579"></a>  
                     ![](figures/inception_gender模型转换时Nodes配置.png "inception_gender模型转换时Nodes配置")
 
-                -   AIPP配置中**Input Image Size\[W\]\[H\]**需要分别修改为256、240，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8。
+                -   AIPP配置中**Input Image Size**需要分别修改为256、240，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8。
 
                     ![](figures/zh-cn_image_0208265214.png)
 
-            -   face\_detection模型转换时AIPP配置中的**Input Image Size\[W\]\[H\]**需要分别修改为384、304，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8。。
+            -   face\_detection模型转换时AIPP配置中的**Input Image Size**需要分别修改为384、304，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8。。
 
                 **图 6**  face\_detection模型转换时非默认配置<a name="zh-cn_topic_0203223281_fig1336214415715"></a>  
                 ![](figures/face_detection模型转换时非默认配置.png "face_detection模型转换时非默认配置")
