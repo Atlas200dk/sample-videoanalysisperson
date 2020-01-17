@@ -120,7 +120,7 @@
         >-   **_1.31.X.X_**是[1](#zh-cn_topic_0203223281_zh-cn_topic_0203223294_li61417158198)中查询到的DDK版本号，需要根据查询结果对应填写，如**1.31.T15.B150**  
         >-   如果此环境变量已经添加，则此步骤可跳过。  
 
-        输入**:wq!**保存退出。
+        输入:wq!保存退出。
 
         执行如下命令使环境变量生效。
 
@@ -394,7 +394,7 @@
 
     1.  请确保视频解析数据存储路径中内容已经清空。
 
-        例如：视频解析数据存储路径为$HOME/videoperson\_storage/video，其中$HOME/videoperson\_storage是执行[步骤4](#zh-cn_topic_0203223281_li499911453439)时配置的“Please input a absolute path to storage video analysis data”的值，video为**param\_configure.conf**配置文件中参数**presenter\_view\_app\_name**的值。
+        例如：视频解析数据存储路径为\\$HOME/videoperson\_storage/video，其中\\$HOME/videoperson\_storage是执行[步骤4](#zh-cn_topic_0203223281_li499911453439)时配置的“Please input a absolute path to storage video analysis data”的值，video为**param\_configure.conf**配置文件中参数**presenter\_view\_app\_name**的值。
 
         满足此条件情况下，无需重启Presenter Server，直接重新执行**Run \> Run 'sample-videoanalysisperson'**运行应用程序即可。
 
