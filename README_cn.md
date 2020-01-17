@@ -132,7 +132,7 @@
 1.  以Mind Studio安装用户进入人体检测应用代码所在根目录，如：$HOME/sample-videoanalysisperson。
 2.  <a name="zh-cn_topic_0182554628_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、Presenter Server服务器的配置等操作，其中Presenter Server用于接收Application发送过来的数据并通过浏览器进行结果展示。
 
-    **bash deploy.sh **_host\_ip_ _model\_mode_
+    **bash deploy.sh** _host\_ip_ _model\_mode_
 
     -   _host\_ip_：对于Atlas 200 DK开发者板，即为开发者板的IP地址。对于AI加速云服务器，即为Host侧的IP地址。
 
