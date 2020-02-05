@@ -192,18 +192,18 @@
         2.  调用omg工具执行以下命令对sample中需要使用的Caffe模型进行模型转换。
 
             ```
-            ${DDK_HOME}/uihost/bin/omg --output="./XXX" --model="./XXX.prototxt" --framework=0 --ddk_version=${tools_version} --weight="./XXX.caffemodel" --input_shape=`head -1 $HOME/AscendProjects/sample-videoanalysisperson/script/shape_XXX` --insert_op_conf=$HOME/AscendProjects/sample-videoanalysisperson/script/aipp_XXX.cfg --op_name_map=$HOME/AscendProjects/sample-videoanalysisperson/script/reassign_operators
+            ${DDK_HOME}/uihost/bin/omg --output="./XXX" --model="./XXX.prototxt" --framework=0 --ddk_version=${tools_version} --weight="./XXX.caffemodel" --input_shape=`head -1 $HOME/AscendProjects/sample-videoanalysisperson/MyModel/shape_XXX` --insert_op_conf=$HOME/AscendProjects/sample-videoanalysisperson/MyModel/aipp_XXX.cfg --op_name_map=$HOME/AscendProjects/sample-videoanalysisperson/MyModel/reassign_operators
             ```
 
             >![](public_sys-resources/icon-note.gif) **说明：**   
-            >-   input\_shape、insert\_op\_conf、op\_name\_map所需要的文件都在源码所在路径下的“sample-videoanalysisperson/script”目录下，请根据您实际的源码所在路径配置这些文件路径。  
+            >-   input\_shape、insert\_op\_conf、op\_name\_map所需要的文件都在源码所在路径下的“sample-videoanalysisperson/MyModel”目录下，请根据您实际的源码所在路径配置这些文件路径。  
             >-   **XXX**为[表 人体检测应用中使用模型](#zh-cn_topic_0203223281_table1193115345597)中的caffe模型名称，转换时请替换填入需要转换的caffe模型名称。其中pedestrian模型转换时不需要op\_name\_map参数，如果没有删除不需要的参数，转换模型时会有报错。  
             >-   每个参数的具体意义可以在以下文档中了解[https://ascend.huawei.com/doc/Atlas200DK/1.3.0.0/zh/zh-cn\_topic\_0165968579.html](https://ascend.huawei.com/doc/Atlas200DK/1.3.0.0/zh/zh-cn_topic_0165968579.html)  
 
         3.  调用omg工具执行以下命令对sample中需要使用的TensorFlow模型进行模型转换
 
             ```
-            ${DDK_HOME}/uihost/bin/omg --output="./XXX" --model="./XXX.pb" --framework=3 --ddk_version=${tools_version} --input_shape=`head -1 $HOME/AscendProjects/sample-videoanalysisperson/script/shape_XXX` --insert_op_conf=$HOME/AscendProjects/sample-videoanalysisperson/script/aipp_XXX.cfg
+            ${DDK_HOME}/uihost/bin/omg --output="./XXX" --model="./XXX.pb" --framework=3 --ddk_version=${tools_version} --input_shape=`head -1 $HOME/AscendProjects/sample-videoanalysisperson/MyModel/shape_XXX` --insert_op_conf=$HOME/AscendProjects/sample-videoanalysisperson/MyModel/aipp_XXX.cfg
             ```
 
             >![](public_sys-resources/icon-note.gif) **说明：**   
