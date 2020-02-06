@@ -54,7 +54,7 @@ function download_code()
         fi
     fi
     echo "Download presenteragent code..."
-    presenter_download_url="https://gitee.com/Atlas200DK/sdk-presenter/repository/archive/1.1.2?format=zip"
+    presenter_download_url="https://github.com/Atlas200DKTest/sdk-presenter/repository/archive/1.1.2?format=zip"
     wget -O ${script_path}/presenter-${presenteragent_version}.ing ${presenter_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${presenter_download_url} connection."
