@@ -54,7 +54,7 @@ function download_code()
         fi
     fi
     echo "Download presenteragent code..."
-    presenter_download_url="https://github.com/Atlas200DKTest/sdk-presenter/repository/archive/1.1.2?format=zip"
+    presenter_download_url="https://github.com/Atlas200DKTest/sdk-presenter/archive/1.1.2.zip"
     wget -O ${script_path}/presenter-${presenteragent_version}.ing ${presenter_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${presenter_download_url} connection."
@@ -68,7 +68,7 @@ function download_code()
         return 1
     fi
     mkdir ${script_path}/presenteragent
-    cp -rf  ${script_path}/sdk-presenter/presenteragent/* ${script_path}/presenteragent
+    cp -rf  ${script_path}/sdk-presenter-${presenteragent_version}/presenteragent/* ${script_path}/presenteragent
     rm -rf ${script_path}/presenter-${presenteragent_version}.zip
     rm -rf ${script_path}/sdk-presenter
     rm -rf ${script_path}/presenter-${presenteragent_version}.ing
