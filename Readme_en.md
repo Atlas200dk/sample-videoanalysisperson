@@ -88,7 +88,44 @@ Before running the application, obtain the source code package and configure the
         
             choose **File \> Settings \> System Settings \> Ascend DDK** from the main menu of Mind Studio, DDK version inquiry page will display as [Figure 1]
              
-            **Figure 1** DDK version inquiry page
+            **Figure 1** DDK version inquiry page<a name="en-us_topic_0182554628_fig138681281084"></a>  
+             ![](figures/DDK版本号查询.png "DDK version inquiry page")
+             **DDK Version** shows in this page is current DDK version, for example, **1.31.T15.B150**
+         - Using DDK package
+             
+             Obtain DDK version by installed DDK package name.
+             
+             The format of DDK package name is: **Ascend_DDK-{software version}-{interface version}-x86_64.ubuntu16.04.tar.gz**
+             
+             Where **software version** represents the DDK version.
+             
+             For example:
+             
+             If the name of DDK package is **Ascend_DDK-1.31.T15.B150-1.1.1-x86_64.ubuntu16.04.tar.gz**, the DDK version would be **1.31.T15.B150**.
+             
+     2. Set the environment variable
+         
+         **vim ~/.bashrc**
+         
+         Run the following commands to add the environment variables  **DDK\_HOME**  and  **LD\_LIBRARY\_PATH**  to the last line:
 
+         **export tools_version=1.31.X.X**
 
+         **export DDK_HOME=\$HOME/.mindstudio/huawei/ddk/\$tools_version/ddk**
+
+         **export NPU_DEVICE_LIB=$DDK_HOME/../RC/host-aarch64_Ubuntu16.04.3/lib**
+
+         **export LD_LIBRARY_PATH=$DDK_HOME/lib/x86_64-linux-gcc5.4**
+         
+         >![](public_sys-resources/icon-note.gif) **NOTE:**   
+         >-   **_1.31.X.X_** is the DDK version obtained from [Figure 1](#en-us_topic_0182554628_fig138681281084), it needs be filled according to the inquiry result，for example, **1.31.T15.B150**  
+         >-   If the environment variables have been added, skip this step.  
+             
+         Enter  **:wq!**  to save and exit.
+
+         Run the following command for the environment variable to take effect:
+
+         **source \~/.bashrc**
+
+4.  Convert the source network to a model 
 
