@@ -15,3 +15,15 @@ Before using an open source application, ensure that:
 
 Before running the application, obtain the source code package and configure the environment as follows.
 
+1.  <a name="en-us_topic_0182554628_li953280133816"></a>Obtain the source code package.
+
+Download all the code in the sample-videoanalysisperson repository at[https://github.com/Atlas200DKTest/sample-videoanalysisperson/tree/1.3x.0.0/](https://github.com/Atlas200DKTest/sample-videoanalysisperson/tree/1.3x.0.0/) to any directory on Ubuntu Server where  Mind Studio  is located as the  Mind Studio  installation user, for example, $HOME/AscendProjects/sample-videoanalysisperson.
+
+2.  <a name="en-us_topic_0182554628_li5507119145914"></a>Obtain the source network model required by the application. Obtain the source network model and its weight file used in the application by referring to  [Table 1](#en-us_topic_0182554628_table1193115345597), and save them to any directory on the Ubuntu server where  Mind Studio  is located, these two files must be saved in the same directory(for example,  **$HOME/models/videoanalysispersion**).
+
+
+
+
+
+
+
