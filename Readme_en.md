@@ -127,5 +127,51 @@ Before running the application, obtain the source code package and configure the
 
          **source \~/.bashrc**
 
-4.  Convert the source network to a model 
+4.  Convert the source network to a model supported by Ascend AI processor. There are two ways for model conversion:  Mind Studio tool conversion and command conversion.
+    
+    -    Model conversion using Mind Studio tool
+         1. Choose **Tool \> Convert** Model from the main menu of Mind Studio. The Convert Model page is displayed.
+         2. On the **Model** **Convert** page, perform model conversion configuration.
+             -    Set **Model File** to model file installed in [Step 2](#en-us_topic_0182554628_li5507119145914), the weight file would be automatically matched and filled in **Weight File**.
+             -    Set **Model Name** to model name in [Table 1](#en-us_topic_0182554628_table1193115345597)
+             -    During Tensorflow model conversion, the value of **N** in **input shape** needs to be filled manually. The values of **W**,**H**,**C** are default.
+             -    **Input Image Size** in AIPP configuration of Pedestrian model need to be modified to 256, 240, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
+             
+                  **Figure 2** AIPP configuration of Pedestrian model<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                  ![](figures/Pedestrian模型转换时AIPP配置.png "AIPP configuration of Pedestrian model")
+            
+            
+            -   The non-default configuration of inception\_age model conversion is as follows:
+                -   age\_inference processes 10 images at a time. Therefore, **N** of **Input Shape** must be set to 10 during conversion.
+
+                    **Figure 3**  Nodes configuration of inception\_age model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                    ![](figures/inception_age模型转换时Nodes配置.png "Nodes configuration of inception\_age model conversio")
+
+                -    **Input Image Size** in AIPP configuration of Pedestrian model need to be modified to 256, 240, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
+
+                    **Figure 4**  AIPP configuration of inception\_age model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                    ![](figures/inception_age模型转换时AIPP配置.png " AIPP configuration of inception\_age model conversion")
+
+            -   The non-default configuration of inception\_gender model conversion is as follows:
+                -   **gender_inference** processes 10 images at a time. Therefore, **N** of **Input Shape** must be set to 10 during conversion.
+                
+                    **Figure 5**  Nodes configuration of inception\_gender model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                    ![](figures/inception_gender模型转换时Nodes配置.png "Nodes configuration of inception\_gender model conversion")
+
+                -   AIPP配置中**Input Image Size**需要分别修改为256、240，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8。
+
+                    ![](figures/zh-cn_image_0208265214.png)
+
+            -   face\_detection模型转换时AIPP配置中的**Input Image Size**需要分别修改为384、304，此处需要128\*16对齐，**Model Image Format**  选择BGR888\_U8。。
+
+                **图 6**  face\_detection模型转换时非默认配置<a name="zh-cn_topic_0203223281_fig1336214415715"></a>  
+                ![](figures/face_detection模型转换时非默认配置.png "face_detection模型转换时非默认配置")
+
+                >![](public_sys-resources/icon-note.gif) **说明：**   
+                >其他未说明配置请使用默认配置。  
+
+
+             
+             
+
 
