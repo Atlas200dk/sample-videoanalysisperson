@@ -78,5 +78,17 @@ Before running the application, obtain the source code package and configure the
     </tbody>
     </table>
 
-3.  Convert the source network model to a Da Vinci model.
+3. Log in to Ubuntu Server where Mind Studio is located as the Mind Studio installation user, confirm current DDK version and set the environment variable  **DDK\_HOME**, **tools_version**, **NPU_DEVICE_LIB** and **LD_LIBRARY_PATH**.
+
+    1. Find current DDK version
+    
+        Current DDK version can be obtained by either Mind studio tool or DDK packages.
+        
+        - Using Mind studio tool
+        
+            choose **File \> Settings \> System Settings \> Ascend DDK** from the main menu of Mind Studio, DDK version inquiry page will display as [Figure 1]
+             
+            **Figure 1** DDK version inquiry page
+
+
 
