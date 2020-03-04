@@ -1,4 +1,4 @@
-EN|[CN](README_cn.md)
+EN|[CN](Readme.md)
 
 # People Detection<a name="EN-US_TOPIC_0167609412"></a>
 
