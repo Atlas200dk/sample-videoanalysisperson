@@ -80,18 +80,20 @@ Before running the application, obtain the source code package and configure the
 
 3. Log in to Ubuntu Server where Mind Studio is located as the Mind Studio installation user, confirm current DDK version and set the environment variable  **DDK\_HOME**, **tools_version**, **NPU_DEVICE_LIB** and **LD_LIBRARY_PATH**.
 
-    1. Find current DDK version
+    1. Find current DDK version number.
     
-        Current DDK version can be obtained by either Mind studio tool or DDK packages.
+        Current DDK version number can be obtained by either Mind studio tool or DDK packages.
         
-        - Using Mind studio tool
+        -   Using Mind studio tool
         
             choose **File \> Settings \> System Settings \> Ascend DDK** from the main menu of Mind Studio, DDK version inquiry page will display as [Figure 1]
              
             **Figure 1** DDK version inquiry page<a name="en-us_topic_0182554628_fig138681281084"></a>  
              ![](figures/DDK版本号查询.png "DDK version inquiry page")
-             **DDK Version** shows in this page is current DDK version, for example, **1.31.T15.B150**
-         - Using DDK package
+             
+             **DDK Version** shows in this page is current DDK version, for example, **1.31.T15.B150**.
+             
+         -   Using DDK package
              
              Obtain DDK version by installed DDK package name.
              
@@ -119,7 +121,7 @@ Before running the application, obtain the source code package and configure the
          
          >![](public_sys-resources/icon-note.gif) **NOTE:**   
          >-   **_1.31.X.X_** is the DDK version obtained from [Figure 1](#en-us_topic_0182554628_fig138681281084), it needs be filled according to the inquiry result，for example, **1.31.T15.B150**  
-         >-   If the environment variables have been added, skip this step.  
+         >-   If the environment variables have been added, this step can be skipped.
              
          Enter  **:wq!**  to save and exit.
 
@@ -137,52 +139,53 @@ Before running the application, obtain the source code package and configure the
              -    During Tensorflow model conversion, the value of **N** in **input shape** needs to be filled manually. The values of **W**,**H**,**C** are default.
              -    **Input Image Size** in AIPP configuration of Pedestrian model need to be modified to 256, 240, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
              
-                  **Figure 2** AIPP configuration of Pedestrian model<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                  **Figure 2** AIPP configuration for Pedestrian model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
                   ![](figures/Pedestrian模型转换时AIPP配置.png "AIPP configuration of Pedestrian model")
             
             
-            -   The non-default configuration of inception\_age model conversion is as follows:
+            -   The non-default configuration for inception\_age model conversion is as follows:
                 -   age\_inference processes 10 images at a time. Therefore, **N** of **Input Shape** must be set to 10 during conversion.
 
-                    **Figure 3**  Nodes configuration of inception\_age model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
-                    ![](figures/inception_age模型转换时Nodes配置.png "Nodes configuration of inception\_age model conversion")
+                    **Figure 3**  Nodes configuration for inception\_age model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                    ![](figures/inception_age模型转换时Nodes配置.png "Nodes configuration for inception\_age model conversion")
 
-                -    **Input Image Size** in AIPP configuration of Pedestrian model need to be modified to 256, 240, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
+                -    **Input Image Size** in AIPP configuration of Pedestrian model needs to be modified to 256, 240, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
 
-                    **Figure 4**  AIPP configuration of inception\_age model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
-                    ![](figures/inception_age模型转换时AIPP配置.png " AIPP configuration of inception\_age model conversion")
+                     **Figure 4**  AIPP configuration for inception\_age model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                     
+                    ![](figures/inception_age模型转换时AIPP配置.png " AIPP configuration for inception\_age model conversion")
 
-            -   The non-default configuration of inception\_gender model conversion is as follows:
+            -   The non-default configuration for inception\_gender model conversion is as follows:
                 -   **gender_inference** processes 10 images at a time. Therefore, **N** of **Input Shape** must be set to 10 during conversion.
                 
-                    **Figure 5**  Nodes configuration of inception\_gender model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
-                    ![](figures/inception_gender模型转换时Nodes配置.png "Nodes configuration of inception\_gender model conversion")
+                    **Figure 5**  Nodes configuration for inception\_gender model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                    ![](figures/inception_gender模型转换时Nodes配置.png "Nodes configuration for inception\_gender model conversion")
 
                 -   **Input Image Size** in AIPP configuration of Pedestrian model need to be modified to 256, 240, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
                     ![](figures/zh-cn_image_0208265214.png)
 
             -   **Input Image Size** in AIPP configuration of face\_detection model need to be modified to 384, 304, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
 
-                **Figure 6** The non-default configuration of face\_detection model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
-                ![](figures/face_detection模型转换时非默认配置.png "The non-default configuration of face\_detection model conversion")
+                **Figure 6** The non-default configuration for face\_detection model conversion<a name="en-us_topic_0182554628_fig138681281084"></a>  
+                ![](figures/face_detection模型转换时非默认配置.png "The non-default configuration for face\_detection model conversion")
 
                 >![](public_sys-resources/icon-note.gif) **NOTE：**   
                 > For other unspecified configurations, please use the default configuration.
                 
          3. Click **OK** to start model conversion.
          
-            During the conversion of the face_detection and vgg_ssd models, the following error will be reported.
+            During the conversion of the **face_detection** and **vgg_ssd** models, the following error will be reported.
             
             **Figure 7** Model conversion error<a name="en-us_topic_0182554628_fig138681281084"></a>  
             ![](figures/模型转换错误信息.png "Model conversion error")
             
-             Select SSDDetectionOutput from the Suggestion drop-down list box at the DetectionOutput layer and click Retry.
+             Select **SSDDetectionOutput** from the **Suggestion** drop-down list box at the **DetectionOutput** layer and click Retry.
 
-             After successful conversion, a .om Da Vinci model is generated in the $HOME/modelzoo/xxx/device.
+             After successful conversion, a .om offline model is generated in the $HOME/modelzoo/xxx/device.
              
              >![](public_sys-resources/icon-note.gif) **NOTE：**   
-            >-   Thespecific meaning and parameter description in each step of Mind Studio model conversion can refer to[https://ascend.huawei.com/doc/mindstudio/2.1.0\(beta\)/zh/zh-cn\_topic\_0188462651.html](https://ascend.huawei.com/doc/mindstudio/2.1.0(beta)/zh/zh-cn_topic_0188462651.html)  
-            >-   XXX indicates the name of currently converted model, for example, face\_detection.om is saved at: $HOME/modelzoo/face\_detection/device。  
+            >-   The specific meaning and parameter description in each step of Mind Studio model conversion can refer to[https://ascend.huawei.com/doc/mindstudio/2.1.0\(beta\)/zh/zh-cn\_topic\_0188462651.html](https://ascend.huawei.com/doc/mindstudio/2.1.0(beta)/zh/zh-cn_topic_0188462651.html)  
+            >-   XXX indicates the name of currently converted model, for example, **face\_detection.om** is saved at: $HOME/modelzoo/face\_detection/device.
 
              
     -   Model conversion in command line mode:
@@ -190,15 +193,15 @@ Before running the application, obtain the source code package and configure the
 
             **cd $HOME/models/videoanalysisperson**
 
-        2.  Using omg tool to execute the following command to perform model conversion on the Caffe model to be used in the sample.
+        2.  Using omg tool to run the following command to perform model conversion on the Caffe model to be used in the sample.
 
             ```
             ${DDK_HOME}/uihost/bin/omg --output="./XXX" --model="./XXX.prototxt" --framework=0 --ddk_version=${tools_version} --weight="./XXX.caffemodel" --input_shape=`head -1 $HOME/AscendProjects/sample-videoanalysisperson/MyModel/shape_XXX` --insert_op_conf=$HOME/AscendProjects/sample-videoanalysisperson/MyModel/aipp_XXX.cfg --op_name_map=$HOME/AscendProjects/sample-videoanalysisperson/MyModel/reassign_operators
             ```
 
             >![](public_sys-resources/icon-note.gif) **NOTE：**   
-            >-  The files required for input\_shape、insert\_op\_conf、op\_name\_mapare all in the “sample-videoanalysisperson/MyModel” directory under the path where the source code is located，please configure these file path according to the path where your actual source code is located.
-            >-   **XXX** is the name of Caffe model in [表 人体检测应用中使用模型](#zh-cn_topic_0203223281_table1193115345597), please fill in the name of Caffe model to be converted during conversion. The pedestrian model does not need the op\_name\_map parameters for conversion. An error will be reported during model conversion if the unnecessary parameters are not deleted.
+            >-  The files required for **input\_shape**、**insert\_op\_conf**、**op\_name\_mapare** all in the “sample-videoanalysisperson/MyModel” directory under the path where the source code is located，please configure these file paths according to the path where your actual source code is located.
+            >-   **XXX** is the name of Caffe model in [Table 1](#zh-cn_topic_0203223281_table1193115345597), please fill in the name of Caffe model to be converted during conversion. The pedestrian model does not need the **op\_name\_map** parameter for conversion. An error will be reported during model conversion if the unnecessary parameters are not deleted.
             >-   The specific meaning of each parameter can be found in the following documents[https://ascend.huawei.com/doc/Atlas200DK/1.3.0.0/zh/zh-cn\_topic\_0165968579.html](https://ascend.huawei.com/doc/Atlas200DK/1.3.0.0/zh/zh-cn_topic_0165968579.html)  
 
         3.  Using omg tool to execute the following command to perform model conversion on the TensorFlow model to be used in the sample.
@@ -208,7 +211,7 @@ Before running the application, obtain the source code package and configure the
             ```
 
             >![](public_sys-resources/icon-note.gif) **NOTE：**   
-            >-   **XXX**is the name of TensorFlow model in [表 人体检测应用中使用模型](#zh-cn_topic_0203223281_table1193115345597), please fill in the name of TensorFlow model to be converted during conversion. 
+            >-   **XXX**is the name of TensorFlow model in [Table 1](#zh-cn_topic_0203223281_table1193115345597), please fill in the name of TensorFlow model to be converted during conversion. 
 
 
 5. Upload the converted model file（.om file）to “**sample-videoanalysisperson/script**” directory  in the source code path in [Step 1]
@@ -217,7 +220,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Open the corresponding project.
 
-    Enter the “MindStudio-ubuntu/bin” directory after decompressing the installation package in the command line, for example, $HOME/MindStudio-ubuntu/bin. Execute the following command to start Mind Studio:
+    Enter the “MindStudio-ubuntu/bin” directory after decompressing the installation package in the command line, for example, $HOME/MindStudio-ubuntu/bin. Run the following command to start Mind Studio:
 
     **./MindStudio.sh**
 
@@ -267,13 +270,13 @@ Before running the application, obtain the source code package and configure the
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
-    >-   The parameters remote\_host and presenter\_view\_app\_name must be filled in，otherwise build cannot be paased.
+    >-   The parameters **_remote\_host__** and **presenter\_view\_app\_name**: must be filled in，otherwise build cannot be passed.
     >-   Note that the "" symbol is no need to be used when filling in parameters.
-    >-   At least one of the parameters video\_path\_of\_host and rtsp\_video\_stream must be filled in.
-    >-   Current RTSP video streams only support rtsp://ip:port/path format, if other urls format is need to be used, the IsValidRtsp  function in the video\_decode.cpp should be removed, or directly return true to skip regular expression matching.
-    >-   The RTSP stream address in this example cannot be used directly. If you need to use RTSP, please use live555 or other methods to make RTSP video streams locally, and it can be played in VLC, then fill the URL of the locally made RTSP video streams into the corresponding parameters of the configuration file.
+    >-   At least one of the parameters **video\_path\_of\_host** and **rtsp\_video\_stream** must be filled in.
+    >-   Current RTSP video streams only support rtsp://ip:port/path format, if other urls format is need to be used, the **IsValidRtsp**  function in the **video\_decode.cpp** should be removed, or directly return true to skip regular expression matching.
+    >-   The RTSP streams address in this example cannot be used directly. If you need to use RTSP, please use live555 or other methods to make RTSP video streams locally, and it can be played in VLC, then fill the URL of the locally made RTSP video streams into the corresponding parameters of the configuration file.
 
-3.  Begin to compile，open **Mindstudio tool**，click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 10](#en-us_topic_0182554628_fig138681281084), **build** and **run** folders will be generated under the directory.
+3.  Begin to compile, open **Mind Studio** tool, click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 10](#en-us_topic_0182554628_fig138681281084), **build** and **run** folders will be generated under the directory.
 
     **Figure 10**  Compile operations and generate files<a name="en-us_topic_0182554628_fig138681281084"></a>  
     
@@ -286,21 +289,21 @@ Before running the application, obtain the source code package and configure the
 
 4.  Start Presenter Server.
 
-    Open **Terminal** of **Mindstudio tool**, it is in the path where code saved in [Step 1] by default(#en-us_topic_0182554628_li5507119145914) run the following command to start the Presenter Server main program of the Face Detection application, shown as [Figure 11](#en-us_topic_0182554628_fig138681281084).
+    Open **Terminal** of **Mind Studio** tool, it is in the path where code saved in [Step 1] by default(#en-us_topic_0182554628_li5507119145914) run the following command to start the Presenter Server main program of the **Face Detection** application, shown as [Figure 11](#en-us_topic_0182554628_fig138681281084).
 
     **bash run\_present\_server.sh**
 
     **Figure 11**  Start PresenterServer<a name="en-us_topic_0182554628_fig138681281084"></a>  
     ![](figures/启动PresenterServer.png "Start PresenterServer")
 
-    -   When the message Please choose one to show the presenter in browser (default: 127.0.0.1): is displayed, enter the IP address used for accessing the Presenter Server service in the browser. Generally, the IP address is the IP address for accessing the Mind Studio service.
+    -   When the message "Please choose one to show the presenter in browser (default: 127.0.0.1):" is displayed, enter the IP address used for accessing the Presenter Server service in the browser. Generally, the IP address is the IP address for accessing the Mind Studio service.
 
-        As shown in [Figure 12](#en-us_topic_0182554628_fig138681281084), Select the IP address used by the browser to access the Presenter Server service in Current environment valid ip list and enter the path for storing video analysis data
+        As shown in [Figure 12](#en-us_topic_0182554628_fig138681281084), Select the IP address used by the browser to access the Presenter Server service in "Current environment valid ip list" and enter the path for storing video analysis data
 
         **Figure 12**  Project deployment<a name="en-us_topic_0182554628_fig138681281084"></a>  
         ![](figures/工程部署示意图.png "Project deployment")
 
-    -   When the message Please input an absolute path to storage video analysis data: is displayed, enter the absolute path for storing video analysis data in Mind Studio. The Mind Studio user must have the read and write permissions. If the path does not exist, the script is automatically created.
+    -   When the message "Please input an absolute path to storage video analysis data:" is displayed, enter the absolute path for storing video analysis data in **Mind Studio**. The **Mind Studio** user must have the read and write permissions. If the path does not exist, the script is automatically created.
     
     As shown in [Figure 13](#en-us_topic_0182554628_fig138681281084), it means **presenter\_server**  service starts successfully.
 
@@ -312,14 +315,14 @@ Before running the application, obtain the source code package and configure the
     **Figure 14**  Home page<a name="en-us_topic_0182554628_fig138681281084"></a>  
     ![](figures/主页显示.png "Home page")
 
-    The following figure shows the IP address used by the Presenter Server and Mind Studio to communicate with the Atlas 200 DK.
+    The following figure shows the IP address used by the **Presenter Server** and **Mind Studio** to communicate with the Atlas 200 DK.
 
     **Figure 15**  Example IP Address<a name="en-us_topic_0182554628_fig138681281084"></a>  
     ![](figures/IP地址示例.png "Example IP Address")
 
     -   The IP address of the Atlas 200 DK developer board is 192.168.1.2 (connected in USB mode).
-    -   The IP address used by the Presenter Server to communicate with the Atlas 200 DK is in the same network segment as the IP address of the Atlas 200 DK on the UI Host server. For example: 192.168.1.223.
-    -   The following is an example of accessing the IP address of the Presenter Server using a browser: 10.10.0.1, because the Presenter Server and Mind Studio are deployed on the same server, the IP address is also the IP address for accessing the Mind Studio through the browser.
+    -   The IP address used by the **Presenter Server** to communicate with the Atlas 200 DK is in the same network segment as the IP address of the Atlas 200 DK on the UI Host server. For example: 192.168.1.223.
+    -   The following is an example of accessing the IP address of the **Presenter Server** using a browser: 10.10.0.1, because the Presenter Server and **Mind Studio** are deployed on the same server, the IP address is also the IP address for accessing the Mind Studio through the browser.
 
 5.  Video analysis application can parse local videos and RTSP video streams.
 
@@ -336,21 +339,21 @@ Before running the application, obtain the source code package and configure the
 
 ## Running<a name="en-us_topic_0182554628_section8534138124114"></a>
 
-1.  Run the people Detection application
+1.  Run the People Detection application
 
-    Find **Run** button in the toolbar of **Mindstudio tool**, click **Run \> Run 'sample-videoanalysisperson'**, as shown in [Figure 16](#en-us_topic_0182554628_fig138681281084), the executable program has been executed on the developer board.
+    Find **Run** button in the toolbar of **Mind Studio** tool, click **Run \> Run 'sample-videoanalysisperson'**, as shown in [Figure 16](#en-us_topic_0182554628_fig138681281084), the executable program has been executed on the developer board.
 
     **Figure 16**  Executed program<a name="en-us_topic_0182554628_fig138681281084"></a>  
     
 
     ![](figures/sample-videoperson-running.png)
 
-2.  Log in to the Presenter Server website using the URL promoted when starting the Presenter Server service（only supports Chrome browser）, for details, please refer to [Step 4](#en-us_topic_0182554628_li5507119145914).
+2.  Log in to the **Presenter Server** website using the URL promoted when starting the **Presenter Server** service（only supports Chrome browser）, for details, please refer to [Step 4](#en-us_topic_0182554628_li5507119145914).
 
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
-    >Presenter Server of people detection supports up to two **_presenter\_view\_app\_name_** to display at the same time.
+    >**Presenter Server** of people detection supports up to two **_presenter\_view\_app\_name_** to display at the same time.
 
-    The navigation tree on the left displays the app name and channel name of the video. The large image of the extracted video frame   and the detected target small image are displayed in the middle. After you click the small image, the detailed inference result and score are displayed on the right.
+    The navigation tree on the left displays the **app name** and channel name of the video. The large image of the extracted video frame   and the detected target small image are displayed in the middle. After you click the small image, the detailed inference result and score are displayed on the right.
     
     This application supports human body attribute detection, and facial attribute detection.
 
@@ -365,18 +368,18 @@ Before running the application, obtain the source code package and configure the
 
 ## Follow-up Operations<a name="en-us_topic_0182554628_section8534138124114"></a>
 
--   **Stopping people detection application**
+-   **Stopping People Detection application**
 
     After the video program is analyzed, it will automatically stop and exit, as shown in[Figure 17](#en-us_topic_0182554628_fig138681281084)
 
-    **Figure 17**  videoperson application stop<a name="en-us_topic_0182554628_fig138681281084"></a>  
-    ![](figures/videoperson应用程序停止.png "videoperson application stop")
+    **Figure 17**  people detection application stops<a name="en-us_topic_0182554628_fig138681281084"></a>  
+    ![](figures/videoperson应用程序停止.png "people detection application stops")
 
 -   **Stopping Presenter Server service**
 
-    The Presenter Server service is always in the running state after being started. To stop the Presenter Server service of the video structured analysis application, perform the following operations:
+    The **Presenter Server** service is always in the running state after being started. To stop the Presenter Server service of the people detection application, perform the following operations:
 
-    Run the following command to check the process of the Presenter Server service corresponding to the video structured analysis application as the Mind Studio installation user:
+    Run the following command to check the process of the **Presenter Server** service corresponding to the people detection application as the **Mind Studio** installation user:
     
     **ps -ef | grep presenter | grep video\_analysis\_person**
 
@@ -391,21 +394,21 @@ Before running the application, obtain the source code package and configure the
 
     **kill -9** _3656_
 
--   **Note on restarting people detection application**
+-   **Note on restarting People Detection application**
 
     Please ensure that any of the following conditions are met when restarting the people detection application, otherwise an error will be reported:
     
     1.  Make sure the content in the path for saving video parsing data has been emptied:
-        For example, the path for saving video parsing data is \\$HOME/videoperson\_storage/video，where \\$HOME/videoperson\_storage is the value of “Please input a absolute path to storage video analysis data” configured in [Step 4](#en-us_topic_0182554628_li5507119145914), and video is the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file.
+        For example, the path for saving video parsing data is \\$HOME/videoperson\_storage/video，where \\$HOME/videoperson\_storage is the value of **"Please input a absolute path to storage video analysis data"** configured in [Step 4](#en-us_topic_0182554628_li5507119145914), and video is the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file.
 
-        When this condition is met, there is no need to restart the Presenter Server. Directly re-run **Run \> Run 'sample-videoanalysisperson'** to run the program.
+        When this condition is met, there is no need to restart the **Presenter Server**. Directly re-run **Run \> Run 'sample-videoanalysisperson'** to run the program.
 
-    2. If data has been saved in the video parsing saving path and you do not want to delete it, you can simply modify  the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file, and re-run **Build \> Rebuild** on the **Mind Studio** interface，then run **Run \> Run 'sample-videoanalysisperson'**.
+    2. If data has been saved in the video parsing saving path and you do not want to delete it, simply modify  the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file, and re-run **Build \> Rebuild** on the **Mind Studio** interface，then run **Run \> Run 'sample-videoanalysisperson'**.
 
         The value of parameter **presenter\_view\_app\_name** in the **param\_configure.conf** configuration file is shown as below:
 
         ![](figures/人体检测的配置文件.png)
 
-        When this condition is met, there is no need to restart the Presenter Server.
+        When this condition is met, there is no need to restart the **Presenter Server**.
 
-    3.  if restart the Presenter Server and then run the car detection application, please modify the path for saving the video parsing data when starting Presenter Server（do not duplicate the previous saving path），refer to [Step 4](#en-us_topic_0182554628_li5507119145914)
+    3.  if restart the Presenter Server and then run the people detection application, please modify the path for saving the video parsing data when starting **Presenter Server**（do not duplicate the previous saving path），refer to [Step 4](#en-us_topic_0182554628_li5507119145914)
