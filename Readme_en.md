@@ -286,7 +286,7 @@ Before running the application, obtain the source code package and configure the
 
 4.  Start Presenter Server.
 
-    Open **Terminal** of **Mindstudio tool**, it is in the path where code saved in [Step 1] by default(#zh-cn_topic_0203223281_li953280133816), run the following command to start the Presenter Server main program of the Face Detection application, shown as [Figure 11](#en-us_topic_0182554628_fig138681281084).
+    Open **Terminal** of **Mindstudio tool**, it is in the path where code saved in [Step 1] by default(#en-us_topic_0182554628_li5507119145914) run the following command to start the Presenter Server main program of the Face Detection application, shown as [Figure 11](#en-us_topic_0182554628_fig138681281084).
 
     **bash run\_present\_server.sh**
 
@@ -334,50 +334,50 @@ Before running the application, obtain the source code package and configure the
     -   if you only parse RTSP video streams, this step can be skipped.
 
 
-## Running<a name="zh-cn_topic_0203223281_section6245151616426"></a>
+## Running<a name="en-us_topic_0182554628_section8534138124114"></a>
 
-1.  运行人体检测应用程序。
+1.  Run the people Detection application
 
-    在Mindstudio工具的工具栏中找到Run按钮，点击**Run \> Run 'sample-videoanalysisperson'**，如[图 程序已执行示意图](#zh-cn_topic_0203223281_fig93931954162719)所示，可执行程序已经在开发板执行。
+    Find **Run** button in the toolbar of **Mindstudio tool**, click **Run \> Run 'sample-videoanalysisperson'**, as shown in [Figure 16](#en-us_topic_0182554628_fig138681281084), the executable program has been executed on the developer board.
 
-    **图 16**  程序已执行示意图<a name="zh-cn_topic_0203223281_fig93931954162719"></a>  
+    **Figure 16**  Executed program<a name="en-us_topic_0182554628_fig138681281084"></a>  
     
 
     ![](figures/sample-videoperson-running.png)
 
-2.  使用启动Presenter Server服务时提示的URL登录 Presenter Server 网站（仅支持Chrome浏览器），详细可参考[步骤4](#zh-cn_topic_0203223281_li499911453439)。
+2.  Log in to the Presenter Server website using the URL promoted when starting the Presenter Server service（only supports Chrome browser）, for details, please refer to [Step 4](#en-us_topic_0182554628_li5507119145914).
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >人体检测应用程序的Presenter Server最多支持2个  _presenter\_view\_app\_name_  同时显示。  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >Presenter Server of people detection supports up to two **_presenter\_view\_app\_name_** to display at the same time.
 
-    页面左侧树结构列出了视频所属app name以及通道名，中间列出了抽取的视频帧大图以及检测出的目标小图，点击下方小图后会在右侧列出详细的推理结果、评分。
+    The navigation tree on the left displays the app name and channel name of the video. The large image of the extracted video frame   and the detected target small image are displayed in the middle. After you click the small image, the detailed inference result and score are displayed on the right.
+    
+    This application supports human body attribute detection, and facial attribute detection.
 
-    本应用支持人体属性检测和人脸属性检测。
+    -   Human body attributes include:
 
-    -   人体属性包括：
+       Ages (ages 16–30, 31–45, 46–60 as well as 61 and above); Backpack; Carrying other; Casual lower; Casual upper; Formal lower; Hat; Jacket; Jeans; Leather Shoes; Logo; Short hair/Long hair; Male/Female; Messenger Bag; Muffler; No accessory; No carrying; Plaid; Plastic bags; Sandals; Shoes; Shorts; Short Sleeve; Skirt; Sneaker; Stripes; Sunglasses; Trousers; T-shirt; Upper other; V-Neck.
 
-        Age：共分Age16-30，Age31-45，Age46-60，AgeAbove61四个年龄段; Backpack; CarryingOther; Casual lower; Casual upper; Formal lower; Hat; Jacket; Jeans; Leather Shoes; Logo; Short hair/Long hair; Male/Female; Messenger Bag; Muffler; No accessory; No carrying; Plaid; PlasticBags; Sandals; Shoes; Shorts; Short Sleeve; Skirt; Sneaker; Stripes; Sunglasses; Trousers; Tshirt; UpperOther; V-Neck。
+        In the detailed inference result display area on the video analysis interface, **Age**, **Male/Female**, and **Short hair/Long hair** are mandatory. Other attributes are displayed only when the confidence level is greater than 0.5.
 
-        其中在视频分析界面的详细推理结果展示区域，Age、Male/Female、Short hair/Long hair是必展示属性，其他属性当置信度\>0.5时则展示，否则不展示。
-
-    -   人脸属性检测支持年龄和性别的的识别。
+    -   Facial attribute detection supports age and gender identification.
 
 
-## 后续处理<a name="zh-cn_topic_0203223281_section1092612277429"></a>
+## Follow-up Operations<a name="en-us_topic_0182554628_section8534138124114"></a>
 
--   **停止人体检测应用**
+-   **Stopping people detection application**
 
-    视频程序分析完之后会自动停止退出，如[图 videoperson应用程序停止](#zh-cn_topic_0203223281_fig853816815204)所示
+    After the video program is analyzed, it will automatically stop and exit, as shown in[Figure 17](#en-us_topic_0182554628_fig138681281084)
 
-    **图 17**  videoperson应用程序停止<a name="zh-cn_topic_0203223281_fig853816815204"></a>  
-    ![](figures/videoperson应用程序停止.png "videoperson应用程序停止")
+    **Figure 17**  videoperson application stop<a name="en-us_topic_0182554628_fig138681281084"></a>  
+    ![](figures/videoperson应用程序停止.png "videoperson application stop")
 
--   **停止Presenter Server服务**
+-   **Stopping Presenter Server service**
 
-    Presenter Server服务启动后会一直处于运行状态，若想停止人体检测应用对应的Presenter Server服务，可执行如下操作。
+    The Presenter Server service is always in the running state after being started. To stop the Presenter Server service of the video structured analysis application, perform the following operations:
 
-    以Mind Studio安装用户在Mind Studio所在服务器中执行如下命令查看人体检测应用对应的Presenter Server服务的进程。
-
+    Run the following command to check the process of the Presenter Server service corresponding to the video structured analysis application as the Mind Studio installation user:
+    
     **ps -ef | grep presenter | grep video\_analysis\_person**
 
     ```
@@ -385,32 +385,27 @@ Before running the application, obtain the source code package and configure the
     ascend 3656 20313 0 15:10 pts/24?? 00:00:00 python3 presenterserver/presenter_server.py --app video_analysis_person
     ```
 
-    如上所示_3656_  即为人体检测应用对应的Presenter Server服务的进程ID。
-
-    若想停止此服务，执行如下命令：
+    In the preceding information, _3656_ indicates the process ID of the Presenter Server service corresponding to the facial recognition application.
+    
+    To stop the service, run the following command:
 
     **kill -9** _3656_
 
--   **重启人体检测应用时注意点**
+-   **Note on restarting people detection application**
 
-    重新启动人体检测应用时请确保以下条件满足任意一个，否则会报错:
+    Please ensure that any of the following conditions are met when restarting the people detection application, otherwise an error will be reported:
+    
+    1.  Make sure the content in the path for saving video parsing data has been emptied:
+        For example, the path for saving video parsing data is \\$HOME/videoperson\_storage/video，where \\$HOME/videoperson\_storage is the value of “Please input a absolute path to storage video analysis data” configured in [Step 4](#en-us_topic_0182554628_li5507119145914), and video is the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file.
 
-    1.  请确保视频解析数据存储路径中内容已经清空。
+        When this condition is met, there is no need to restart the Presenter Server. Directly re-run **Run \> Run 'sample-videoanalysisperson'** to run the program.
 
-        例如：视频解析数据存储路径为\\$HOME/videoperson\_storage/video，其中\\$HOME/videoperson\_storage是执行[步骤4](#zh-cn_topic_0203223281_li499911453439)时配置的“Please input a absolute path to storage video analysis data”的值，video为**param\_configure.conf**配置文件中参数**presenter\_view\_app\_name**的值。
+    2. If data has been saved in the video parsing saving path and you do not want to delete it, you can simply modify  the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file, and re-run **Build \> Rebuild** on the **Mind Studio** interface，then run **Run \> Run 'sample-videoanalysisperson'**.
 
-        满足此条件情况下，无需重启Presenter Server，直接重新执行**Run \> Run 'sample-videoanalysisperson'**运行应用程序即可。
-
-    2.  视频解析数据存储路径中如果已有数据且不想删除，可以修改**param\_configure.conf**配置文件中**presenter\_view\_app\_name**参数的值，然后在Mind Studio界面中重新执行**Build \> Rebuild**，再执行**Run \> Run 'sample-videoanalysisperson'**即可。
-
-        **param\_configure.conf**配置文件中参数**presenter\_view\_app\_name**的值如下所示。
+        The value of parameter **presenter\_view\_app\_name** in the **param\_configure.conf** configuration file is shown as below:
 
         ![](figures/人体检测的配置文件.png)
 
-        满足此条件情况下，无需重启Presenter Server。
+        When this condition is met, there is no need to restart the Presenter Server.
 
-    3.  若重新启动Presenter Server，再运行车辆检测应用，在启动Presenter Server时请修改存储视频解析的数据的路径（不与之前存储路径重复），请参考[步骤4](#zh-cn_topic_0203223281_li499911453439)。
-
-
-
-
+    3.  if restart the Presenter Server and then run the car detection application, please modify the path for saving the video parsing data when starting Presenter Server（do not duplicate the previous saving path），refer to [Step 4](#en-us_topic_0182554628_li5507119145914)
