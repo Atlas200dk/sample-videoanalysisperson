@@ -228,7 +228,7 @@ Before running the application, obtain the source code package and configure the
 
 2.  Configure related project information in the **src/param\_configure.conf**
 
-    **Figure 9**  配置文件路径<a name="en-us_topic_0182554628_fig138681281084"></a>  
+    **Figure 9**  Configure file path<a name="en-us_topic_0182554628_fig138681281084"></a>  
     ![](figures/配置文件路径.png "Configure file path")
 
     The configuration file is as follows:
@@ -240,15 +240,15 @@ Before running the application, obtain the source code package and configure the
     rtsp_video_stream=
     ```
 
-    需要手动添加参数配置：
+    Following parameter configuration need to be added manually：
 
-    -   remote\_host：配置为Atlas 200 DK开发者板的IP地址。
+    -   remote\_host：this parameter indicates the IP address of Atlas 200 DK developer board.
 
-    -   presenter\_view\_app\_name: 用户自定义的在PresenterServer界面展示的View Name，此View Name需要在Presenter Server展示界面唯一，只能为大小写字母、数字、“\_”的组合，位数3\~20。
-    -   video\_path\_of\_host：配置为HOST侧的视频文件的绝对路径。
-    -   rtsp\_video\_stream：配置为RTSP视频流的URL。
+    -   presenter\_view\_app\_name: The user-defined View Name on the PresenterServer interface, this View Name needs to be unique  on the Presenter Server. It can only be a combination of uppercase and lowercase letters, numbers, and "\_", with a digit of 3 \~20.
+    -   video\_path\_of\_host：absolute path of video file on the HOST.
+    -   rtsp\_video\_stream：URL of RTSP video streams.
 
-    视频文件配置示例如下：
+    An example of video file configuration is as follows:
 
     ```
     remote_host=192.168.1.2
@@ -257,7 +257,7 @@ Before running the application, obtain the source code package and configure the
     rtsp_video_stream=
     ```
 
-    Rtsp视频流配置示例如下：
+    An example of Rtsp video streams configuration is as follows:
 
     ```
     remote_host=192.168.1.2
@@ -266,73 +266,75 @@ Before running the application, obtain the source code package and configure the
     rtsp_video_stream=rtsp://192.168.2.37:554/cam/realmonitor?channel=1&subtype=0
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   参数remote\_host和presenter\_view\_app\_name必须全部填写，否则无法通过build。  
-    >-   注意参数填写时不需要使用“”符号。  
-    >-   参数video\_path\_of\_host和rtsp\_video\_stream必须至少填写一项。  
-    >-   当前RTSP视频流只支持rtsp://ip:port/path格式，如果需要使用其它格式的url，需要把video\_decode.cpp中的IsValidRtsp函数去除，或者直接返回true，跳过正则表达式匹配。  
-    >-   本样例中提供的RTSP流地址不可以直接使用。如果需要使用RTSP，请在本地使用live555或其它方式制作RTSP视频流，并且可以在VLC中播放。然后将本地制作好的RTSP视频流的URL填入配置文件的相应参数中，即可运行  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   The parameters remote\_host and presenter\_view\_app\_name must be filled in，otherwise build cannot be paased.
+    >-   Note that the "" symbol is no need to be used when filling in parameters.
+    >-   At least one of the parameters video\_path\_of\_host and rtsp\_video\_stream must be filled in.
+    >-   Current RTSP video streams only support rtsp://ip:port/path format, if other urls format is need to be used, the IsValidRtsp  function in the video\_decode.cpp should be removed, or directly return true to skip regular expression matching.
+    >-   The RTSP stream address in this example cannot be used directly. If you need to use RTSP, please use live555 or other methods to make RTSP video streams locally, and it can be played in VLC, then fill the URL of the locally made RTSP video streams into the corresponding parameters of the configuration file.
 
-3.  开始编译，打开Mindstudio工具，在工具栏中点击**Build \> Build \> Build-Configuration**。如[图 编译操作及生成文件](#zh-cn_topic_0203223281_fig1625447397)所示，会在目录下生成build和run文件夹。
+3.  Begin to compile，open **Mindstudio tool**，click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 10](#en-us_topic_0182554628_fig138681281084), **build** and **run** folders will be generated under the directory.
 
-    **图 10**  编译操作及生成文件<a name="zh-cn_topic_0203223281_fig1625447397"></a>  
+    **Figure 10**  Compile operations and generate files<a name="en-us_topic_0182554628_fig138681281084"></a>  
     
 
     ![](figures/zh-cn_image_0208267063.png)
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >首次编译工程时，**Build \> Build**为灰色不可点击状态。需要点击**Build \> Edit Build Configuration**，配置编译参数后再进行编译。  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >When you compile the project for the first time, **Build \> Build** is gray and not clickable. Your need to click **Build \> Edit Build Configuration**, configure the compilation parameters and then compile.  
     >![](figures/build_configuration.png)  
 
-4.  <a name="zh-cn_topic_0203223281_li499911453439"></a>启动Presenter Server。
+4.  Start Presenter Server.
 
-    打开Mindstudio工具的Terminal，此时默认在[步骤1](#zh-cn_topic_0203223281_li953280133816)中的代码存放路径下，执行如下命令在后台启动Face Detection应用的Presenter Server主程序。如[图 启动PresenterServer](#zh-cn_topic_0203223281_fig423515251067)所示。
+    Open **Terminal** of **Mindstudio tool**, it is in the path where code saved in [Step 1] by default(#zh-cn_topic_0203223281_li953280133816), run the following command to start the Presenter Server main program of the Face Detection application, shown as [Figure 11](#en-us_topic_0182554628_fig138681281084).
 
     **bash run\_present\_server.sh**
 
-    **图 11**  启动PresenterServer<a name="zh-cn_topic_0203223281_fig423515251067"></a>  
-    ![](figures/启动PresenterServer.png "启动PresenterServer")
+    **Figure 11**  Start PresenterServer<a name="en-us_topic_0182554628_fig138681281084"></a>  
+    ![](figures/启动PresenterServer.png "Start PresenterServer")
 
-    -   当提示“Please choose one to show the presenter in browser\(default: 127.0.0.1\):“时，请输入在浏览器中访问Presenter Server服务所使用的IP地址（一般为访问Mind Studio的IP地址）。
+    -   When the message Please choose one to show the presenter in browser (default: 127.0.0.1): is displayed, enter the IP address used for accessing the Presenter Server service in the browser. Generally, the IP address is the IP address for accessing the Mind Studio service.
 
-        如[图 工程部署示意图](#zh-cn_topic_0203223281_fig999812514814)所示，请在“**Current environment valid ip list**”中选择通过浏览器访问Presenter Server服务使用的IP地址。
+        As shown in [Figure 12](#en-us_topic_0182554628_fig138681281084), Select the IP address used by the browser to access the Presenter Server service in Current environment valid ip list and enter the path for storing video analysis data
 
-        **图 12**  工程部署示意图<a name="zh-cn_topic_0203223281_fig999812514814"></a>  
-        ![](figures/工程部署示意图.png "工程部署示意图")
+        **Figure 12**  Project deployment<a name="en-us_topic_0182554628_fig138681281084"></a>  
+        ![](figures/工程部署示意图.png "Project deployment")
 
-    -   当提示“Please input a absolute path to storage video analysis data:“时，请输入Mind Studio中的绝对路径用于存储视频解析数据，此路径Mind Studio用户需要有读写权限，若此路径不存在，脚本会自动创建。
+    -   When the message Please input an absolute path to storage video analysis data: is displayed, enter the absolute path for storing video analysis data in Mind Studio. The Mind Studio user must have the read and write permissions. If the path does not exist, the script is automatically created.
+    
+    As shown in [Figure 13](#en-us_topic_0182554628_fig138681281084), it means **presenter\_server**  service starts successfully.
 
-    如[图13](#zh-cn_topic_0203223281_fig69531305324)所示，表示presenter\_server的服务启动成功。
+    **Figure 13**  Starting the Presenter Server process<a name="en-us_topic_0182554628_fig138681281084"></a>  
+    ![](figures/Presenter-Server进程启动.png "Starting the Presenter Server process")
 
-    **图 13**  Presenter Server进程启动<a name="zh-cn_topic_0203223281_fig69531305324"></a>  
-    ![](figures/Presenter-Server进程启动.png "Presenter-Server进程启动")
+    Use the URL shown in the preceding figure to log in to Presenter Server (only the Chrome browser is supported). The IP address is that entered in 2 and the default port number is 7011. The following figure indicates that Presenter Server is started successfully.
+    
+    **Figure 14**  Home page<a name="en-us_topic_0182554628_fig138681281084"></a>  
+    ![](figures/主页显示.png "Home page")
 
-    使用上图提示的URL登录Presenter Server（仅支持Chrome浏览器），IP地址为[图12](#zh-cn_topic_0203223281_fig999812514814)中输入的IP地址，端口号默为7011，如下图所示，表示Presenter Server启动成功。
+    The following figure shows the IP address used by the Presenter Server and Mind Studio to communicate with the Atlas 200 DK.
 
-    **图 14**  主页显示<a name="zh-cn_topic_0203223281_fig64391558352"></a>  
-    ![](figures/主页显示.png "主页显示")
+    **Figure 15**  Example IP Address<a name="en-us_topic_0182554628_fig138681281084"></a>  
+    ![](figures/IP地址示例.png "Example IP Address")
 
-    Presenter Server、Mind Studio与Atlas 200 DK之间通信使用的IP地址示例如下图所示：
+    -   The IP address of the Atlas 200 DK developer board is 192.168.1.2 (connected in USB mode).
+    -   The IP address used by the Presenter Server to communicate with the Atlas 200 DK is in the same network segment as the IP address of the Atlas 200 DK on the UI Host server. For example: 192.168.1.223.
+    -   The following is an example of accessing the IP address of the Presenter Server using a browser: 10.10.0.1, because the Presenter Server and Mind Studio are deployed on the same server, the IP address is also the IP address for accessing the Mind Studio through the browser.
 
-    **图 15**  IP地址示例<a name="zh-cn_topic_0203223281_fig1881532172010"></a>  
-    ![](figures/IP地址示例.png "IP地址示例")
-
-    -   Atlas 200 DK开发者板使用的IP地址为192.168.1.2（USB方式连接）。
-    -   Presenter Server与Atlas 200 DK通信的IP地址为UI Host服务器中与Atlas 200 DK在同一网段的IP地址，例如：192.168.1.223。
-    -   通过浏览器访问Presenter Server的IP地址本示例为：10.10.0.1，由于Presenter Server与Mind Studio部署在同一服务器，此IP地址也为通过浏览器访问Mind Studio的IP。
-
-5.  人体检测应用支持解析本地视频和RTSP视频流。
-    -   如果需要解析本地视频，需要将视频文件传到Host侧。
-
-        例如将视频文件person.mp4上传到Host侧的“/home/HwHiAiUser/“目录下。
-
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >支持H264与H265格式的MP4文件，如果MP4文件需要剪辑，建议使用开源工具ffmpeg，使用其他工具剪辑的视频文件ffmpeg工具可能不支持解析。  
-
-    -   如果仅解析RTSP视频流，本步骤可跳过。
+5.  Video analysis application can parse local videos and RTSP video streams.
 
 
-## 运行<a name="zh-cn_topic_0203223281_section6245151616426"></a>
+    -   To parse a local video, upload the video file to the Host.
+
+        For example, upload the video file **person.mp4** to the **/home/HwHiAiUser/** directory on the host.
+
+        >![](public_sys-resources/icon-note.gif) **NOTE：**   
+        > H264 and H265 format MP4 files are supported，the open source tool FFmpeg is recommended if MP4 files need to be edited, because FFmpeg tools may fail to parse video files edited using other tools.
+
+    -   if you only parse RTSP video streams, this step can be skipped.
+
+
+## Running<a name="zh-cn_topic_0203223281_section6245151616426"></a>
 
 1.  运行人体检测应用程序。
 
