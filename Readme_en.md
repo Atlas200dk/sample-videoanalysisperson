@@ -142,7 +142,7 @@ Before running the application, obtain the source code package and configure the
              -    **Input Image Size** in AIPP configuration of Pedestrian model need to be modified to 256, 240, 128 \*16 alignment is required here, for **Model Image Format**, select BGR888\_U8.
              
                   **Figure 2** AIPP configuration for Pedestrian model conversion<a name="zh-cn_topic_0203223281_fig15011753113814"></a>  
-                  ![](figures/Pedestrian模型转换时AIPP配置.png "AIPP configuration of Pedestrian model")
+                   ![](figures/Pedestrian模型转换时AIPP配置.png "AIPP configuration of Pedestrian model")
             
             
             -   The non-default configuration for inception\_age model conversion is as follows:
@@ -155,7 +155,7 @@ Before running the application, obtain the source code package and configure the
 
                      **Figure 4**  AIPP configuration for inception\_age model conversion<a name="zh-cn_topic_0203223281_fig334910264011"></a>  
                      
-                    ![](figures/inception_age模型转换时AIPP配置.png " AIPP configuration for inception\_age model conversion")
+                     ![](figures/inception_age模型转换时AIPP配置.png " AIPP configuration for inception\_age model conversion")
 
             -   The non-default configuration for inception\_gender model conversion is as follows:
                 -   **gender_inference** processes 10 images at a time. Therefore, **N** of **Input Shape** must be set to 10 during conversion.
@@ -294,8 +294,9 @@ Before running the application, obtain the source code package and configure the
     Open **Terminal** of **Mind Studio** tool, it is in the path where code saved in [Step 1] by default(#zh-cn_topic_0203223281_li953280133816) run the following command to start the Presenter Server main program of the **Face Detection** application, shown as [Figure 11](#zh-cn_topic_0203223281_fig423515251067).
 
     **bash run\_present\_server.sh**
-
-    **Figure 11**  Start PresenterServer<a name="zh-cn_topic_0203223281_fig423515251067"></a> 
+    
+    **Figure 11** Start PresenterServer<a name="zh-cn_topic_0203223281_fig423515251067"></a> 
+    
     ![](figures/启动PresenterServer.png "Start PresenterServer")
 
     -   When the message "Please choose one to show the presenter in browser (default: 127.0.0.1):" is displayed, enter the IP address used for accessing the **Presenter Server** service in the browser. Generally, the IP address is the IP address for accessing the **Mind Studio** service.
