@@ -301,7 +301,7 @@ Before running the application, obtain the source code package and configure the
 
     -   When the message "Please choose one to show the presenter in browser (default: 127.0.0.1):" is displayed, enter the IP address used for accessing the **Presenter Server** service in the browser. Generally, the IP address is the IP address for accessing the **Mind Studio** service.
 
-        As shown in [Figure 12](#zh-cn_topic_0203223281_fig999812514814), Select the IP address used by the browser to access the Presenter Server service in "Current environment valid ip list" and enter the path for storing video analysis data
+        As shown in [Figure 12](#zh-cn_topic_0203223281_fig999812514814), Select the IP address used by the browser to access the Presenter Server service in **"Current environment valid ip list"** and enter the path for storing video analysis data
 
         **Figure 12**  Project deployment<a name="zh-cn_topic_0203223281_fig999812514814"></a>  
         ![](figures/工程部署示意图.png "Project deployment")
@@ -356,24 +356,24 @@ Before running the application, obtain the source code package and configure the
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
     >**Presenter Server** of people detection supports up to two **_presenter\_view\_app\_name_** to display at the same time.
 
-    The navigation tree on the left displays the **app name** and channel name of the video. The large image of the extracted video frame   and the detected target small image are displayed in the middle. After you click the small image, the detailed inference result and score are displayed on the right.
+     The navigation tree on the left displays the **app name** and channel name of the video. The large image of the extracted video frame   and the detected target small image are displayed in the middle. After you click the small image, the detailed inference result and score are displayed on the right.
     
-    This application supports human body attribute detection, and facial attribute detection.
+     This application supports human body attribute detection, and facial attribute detection.
 
-    -   Human body attributes include:
+      -   Human body attributes include:
 
-       Ages (ages 16–30, 31–45, 46–60 as well as 61 and above); Backpack; Carrying other; Casual lower; Casual upper; Formal lower; Hat; Jacket; Jeans; Leather Shoes; Logo; Short hair/Long hair; Male/Female; Messenger Bag; Muffler; No accessory; No carrying; Plaid; Plastic bags; Sandals; Shoes; Shorts; Short Sleeve; Skirt; Sneaker; Stripes; Sunglasses; Trousers; T-shirt; Upper other; V-Neck.
+          Ages (ages 16–30, 31–45, 46–60 as well as 61 and above); Backpack; Carrying other; Casual lower; Casual upper; Formal lower; Hat; Jacket; Jeans; Leather Shoes; Logo; Short hair/Long hair; Male/Female; Messenger Bag; Muffler; No accessory; No carrying; Plaid; Plastic bags; Sandals; Shoes; Shorts; Short Sleeve; Skirt; Sneaker; Stripes; Sunglasses; Trousers; T-shirt; Upper other; V-Neck.
 
-        In the detailed inference result display area on the video analysis interface, **Age**, **Male/Female**, and **Short hair/Long hair** are mandatory. Other attributes are displayed only when the confidence level is greater than 0.5.
+          In the detailed inference result display area on the video analysis interface, **Age**, **Male/Female**, and **Short hair/Long hair** are mandatory. Other attributes are displayed only when the confidence level is greater than 0.5.
 
-    -   Facial attribute detection supports age and gender identification.
+       -   Facial attribute detection supports age and gender identification.
 
 
 ## Follow-up Operations<a name="zh-cn_topic_0203223281_section1092612277429"></a>
 
 -   **Stopping People Detection application**
 
-    After the video program is analyzed, it will automatically stop and exit, as shown in[Figure 17](#zh-cn_topic_0203223281_fig853816815204)
+    After the video program is analyzed, it will automatically stop and exit, as shown in [Figure 17](#zh-cn_topic_0203223281_fig853816815204)
 
     **Figure 17**  people detection application stops<a name="zh-cn_topic_0203223281_fig853816815204"></a>  
     ![](figures/videoperson应用程序停止.png "people detection application stops")
