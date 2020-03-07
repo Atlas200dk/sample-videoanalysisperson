@@ -26,7 +26,7 @@ Before running the application, obtain the source code package and configure the
     **Table  1**  Models used in the people detection application
   
   
-    a name="zh-cn_topic_0203223281_table1193115345597"></a>
+    <a name="zh-cn_topic_0203223281_table1193115345597"></a>
     <table><thead align="left"><tr id="zh-cn_topic_0203223281_row1187103505916"><th class="cellrowborder" valign="top" width="15.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0203223281_p887235105910"><a name="zh-cn_topic_0203223281_p887235105910"></a><a name="zh-cn_topic_0203223281_p887235105910"></a>Model Name</p>
     </th>
     <th class="cellrowborder" valign="top" width="10.58%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0203223281_p16877355598"><a name="zh-cn_topic_0203223281_p16877355598"></a><a name="zh-cn_topic_0203223281_p16877355598"></a>Model Description</p>
