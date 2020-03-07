@@ -21,7 +21,7 @@ Before running the application, obtain the source code package and configure the
 
 2.  <a name="zh-cn_topic_0203223281_li5507119145914"></a>Obtain the source network model required by the application. 
 
-    Obtain the source network model and its weight file used in the application by referring to  [Table 1]((#zh-cn_topic_0203223281_table1193115345597), and save them to any directory on the Ubuntu server where  **Mind Studio**  is located, these two files must be saved in the same directory(for example,  **$HOME/models/videoanalysispersion**).
+    Obtain the source network model and its weight file used in the application by referring to  [Table 1](#zh-cn_topic_0203223281_table1193115345597), and save them to any directory on the Ubuntu server where  **Mind Studio**  is located, these two files must be saved in the same directory(for example,  **$HOME/models/videoanalysispersion**).
 
     **Table  1**  Models used in the people detection application
   
