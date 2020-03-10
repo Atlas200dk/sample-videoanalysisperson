@@ -436,6 +436,10 @@ function check_proto_version()
     fi       
 
     echo "The proto code does not match the protoc version, need regenerate code"
+    if [ -e "$HOME/ascend_ddk/presenteragent/out/libpresenteragent.so" ];then
+        echo "libpresenteragent.so is removed because presenteragent needs to be recompiled"
+        rm $HOME/ascend_ddk/presenteragent/out/libpresenteragent.so
+    fi
     generate_proto_code $proto_file
     if [ $? -eq 1 ];then
         echo "ERROR: regenerate proto code failed"
