@@ -24,17 +24,6 @@ Before using an open source application, ensure that:
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
     >-   This deployment method requires manually performing code download, model conversion and environment variable configuration. A better understand of the deployment process can be obtained from this method.
 
-
-3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419").
-    
-    **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
-    
-    ![](figures/ 3333333 deploy_facedetection.png)
-    
-    >![](public_sys-resources/icon-note.gif) **NOTE：**   
-    >-   Automatic download and compilation will perform if 3rd party libraries are not deployed for the first time of deployment. This process might take some time, please wait patiently. It will not download and compilation repeatedly when recompiling later, deployment is shown as above. 
-    >-   Select the HOST IP connected to the developer board when deploying, which is usually the IP of virtual network card. If this IP belongs to the same segment as the developer board IP, it will be selected automatically and deployed. Otherwise, manual entering the IP connected to developer board is required for deployment.
-
 ## Compile<a name="zh-cn_topic_0203223281_section1759513564117"></a>
 
 1.  Open the corresponding project.
