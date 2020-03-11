@@ -13,7 +13,7 @@ Before using an open source application, ensure that:
 
 
 ## Deployment
-1. Deployment: choose either faster-deployment or conventional deployment as shown below: 
+1. Deployment: choose either faster deployment or conventional deployment as shown below: 
 
    1.1 Faster deployment, refer to https://gitee.com/Atlas200DK/faster-deploy .
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
@@ -84,7 +84,7 @@ Before using an open source application, ensure that:
     >-   Current RTSP video streams only support rtsp://ip:port/path format, if other urls format is need to be used, the **IsValidRtsp**  function in the **video\_decode.cpp** should be removed, or directly return true to skip regular expression matching.
     >-   The RTSP streams address in this example cannot be used directly. If you need to use RTSP, please use live555 or other methods to make RTSP video streams locally, and it can be played in VLC, then fill the URL of the locally made RTSP video streams into the corresponding parameters of the configuration file.
 
-3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419").
+3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419).
     
     **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
     
@@ -107,7 +107,7 @@ Before using an open source application, ensure that:
 
 5.  <a name="zh-cn_topic_0203223281_li499911453439"></a>Start Presenter Server.
 
-    Open **Terminal** of **Mind Studio** tool, it is in the path where code saved in [Step 1] by default(#zh-cn_topic_0203223281_li953280133816) run the following command to start the Presenter Server main program of the **Face Detection** application, shown as [Figure 5](#zh-cn_topic_0203223281_fig423515251067).
+    Open **Terminal** of **Mind Studio** tool, it is in the path where code saved in [Step 1](#zh-cn_topic_0203223281_li953280133816) by default run the following command to start the Presenter Server main program of the **Face Detection** application, shown as [Figure 5](#zh-cn_topic_0203223281_fig423515251067).
 
     **bash run\_present\_server.sh**
     
@@ -167,7 +167,7 @@ Before using an open source application, ensure that:
 
     ![](figures/sample-videoperson-running.png)
 
-2.  Log in to the **Presenter Server** website using the URL promoted when starting the **Presenter Server** service（only supports Chrome browser）, for details, please refer to [Step 4](#zh-cn_topic_0203223281_li499911453439).
+2.  Log in to the **Presenter Server** website using the URL promoted when starting the **Presenter Server** service（only supports Chrome browser）, for details, please refer to [Step 5](#zh-cn_topic_0203223281_li499911453439).
 
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
     >**Presenter Server** of people detection supports up to two **_presenter\_view\_app\_name_** to display at the same time.
@@ -218,7 +218,7 @@ Before using an open source application, ensure that:
     Please ensure that any of the following conditions are met when restarting the people detection application, otherwise an error will be reported:
     
     1.  Make sure the content in the path for saving video parsing data has been emptied:
-        For example, the path for saving video parsing data is **\\$HOME/videoperson\_storage/video**，where **\\$HOME/videoperson\_storage** is the value of **"Please input a absolute path to storage video analysis data"** configured in [Step 4](#zh-cn_topic_0203223281_li499911453439), and video is the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file.
+        For example, the path for saving video parsing data is **\\$HOME/videoperson\_storage/video**，where **\\$HOME/videoperson\_storage** is the value of **"Please input a absolute path to storage video analysis data"** configured in [Step 5](#zh-cn_topic_0203223281_li499911453439), and video is the value of parameter **presenter\_view\_app\_name** in **param\_configure.conf** configuration file.
 
         When this condition is met, there is no need to restart the **Presenter Server**. Directly re-run **Run \> Run 'sample-videoanalysisperson'** to run the program.
 
@@ -230,4 +230,4 @@ Before using an open source application, ensure that:
 
         When this condition is met, there is no need to restart the **Presenter Server**.
 
-    3.  if restart the Presenter Server and then run the people detection application, please modify the path for saving the video parsing data when starting **Presenter Server**（do not duplicate the previous saving path），refer to [Step 4](#zh-cn_topic_0203223281_li499911453439).
+    3.  if restart the Presenter Server and then run the people detection application, please modify the path for saving the video parsing data when starting **Presenter Server**（do not duplicate the previous saving path），refer to [Step 5](#zh-cn_topic_0203223281_li499911453439).
