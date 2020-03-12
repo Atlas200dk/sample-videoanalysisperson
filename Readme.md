@@ -1,4 +1,4 @@
-CN|[EN](Readme_en.md)
+CH|[EN](Readme_en.md)
 
 # 人体检测<a name="ZH-CN_TOPIC_0208836319"></a>
 
