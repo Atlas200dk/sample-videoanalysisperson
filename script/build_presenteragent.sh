@@ -68,7 +68,7 @@ function download_code()
         return 1
     fi
     mkdir ${script_path}/presenteragent
-    cp -rf  ${script_path}/sdk-presenter-${presenteragent_version}/presenteragent/* ${script_path}/presenteragent
+    cp -rf  ${script_path}/sdk-presenter/presenteragent/* ${script_path}/presenteragent
     rm -rf ${script_path}/presenter-${presenteragent_version}.zip
     rm -rf ${script_path}/sdk-presenter
     rm -rf ${script_path}/presenter-${presenteragent_version}.ing

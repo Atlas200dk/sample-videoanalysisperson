@@ -36,7 +36,7 @@
 script_path="$( cd "$(dirname "$0")" ; pwd -P )"
 
 download_mode=$1
-ffmpeg_version="4.1.2"
+ffmpeg_version="n4.1.2"
 
 function download_code()
 {
@@ -54,7 +54,7 @@ function download_code()
         fi
     fi
     echo "Download ffmpeg code..."
-    ffmpeg_download_url="https://ffmpeg.org/releases/ffmpeg-${ffmpeg_version}.tar.gz"
+    ffmpeg_download_url="https://gitee.com/mirrors/ffmpeg/repository/archive/${ffmpeg_version}.tar.gz"
     wget -O ${script_path}/${ffmpeg_version}.ing ${ffmpeg_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${ffmpeg_download_url} connection."
@@ -69,7 +69,6 @@ function download_code()
     fi
     rm -rf ${script_path}/${ffmpeg_version}
     rm -rf ${script_path}/${ffmpeg_version}.ing
-    mv ${script_path}/ffmpeg-${ffmpeg_version} ${script_path}/ffmpeg
     return 0
 
 }

@@ -699,7 +699,7 @@ HIAI_IMPL_ENGINE_PROCESS("face_detection", FaceDetection, INPUT_SIZE) {
     return HIAI_OK;
   }
 
-  // 1、resize input image.
+  // 1resize input image.
   ImageData<u_int8_t> resized_img;
   HIAI_StatusT dvpp_ret = ImagePreProcess(detection_trans->video_image.img,
       resized_img);
@@ -713,7 +713,7 @@ HIAI_IMPL_ENGINE_PROCESS("face_detection", FaceDetection, INPUT_SIZE) {
     return HIAI_ERROR;
   }
 
-  // 2、inference
+  // 2inference
   dvpp_ret = PerformInference(detection_trans, resized_img);
 
   if (dvpp_ret != HIAI_OK) {
@@ -725,7 +725,7 @@ HIAI_IMPL_ENGINE_PROCESS("face_detection", FaceDetection, INPUT_SIZE) {
     return HIAI_ERROR;
   }
 
-  // 3、postprecess
+  // 3postprecess
   dvpp_ret = HandleResults(detection_trans);
   if (dvpp_ret != HIAI_OK) {
     HIAI_ENGINE_LOG(HIAI_ENGINE_RUN_ARGS_NOT_RIGHT,
@@ -736,7 +736,7 @@ HIAI_IMPL_ENGINE_PROCESS("face_detection", FaceDetection, INPUT_SIZE) {
     return HIAI_ERROR;
   }
 
-  // 4、release sources
+  // 4release sources
   tran_data_ = nullptr;
   tran_jpg_data_ = nullptr;
 
