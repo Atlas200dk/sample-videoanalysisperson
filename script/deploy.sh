@@ -10,8 +10,8 @@ check_param_configure()
 {
     remote_host=`cat ${app_path}/param_configure.conf | grep "remote_host" | awk -F'[ =]+' '{print $2}'`
     presenter_view_app_name=`cat ${app_path}/param_configure.conf | grep "presenter_view_app_name" | awk -F'[ =]+' '{print $2}'`
-    video_path_of_host=`cat ${app_path}/param_configure.conf | grep "video_path_of_host" | awk -F'[ =]+' '{print $2}'`
-    rtsp_video_stream=`cat ${app_path}/param_configure.conf | grep "rtsp_video_stream" | awk -F'[ =]+' '{print $2}'`
+    video_path_of_host=`cat ${app_path}/param_configure.conf | grep "video_path_of_host" | sed 's/ //g' | cut -d'=' -f2-`
+    rtsp_video_stream=`cat ${app_path}/param_configure.conf | grep "rtsp_video_stream" | sed 's/ //g' | cut -d'=' -f2-`
     if [[ ${remote_host} = "" || ${presenter_view_app_name} = "" || ${video_path_of_host} = "" && ${rtsp_video_stream} = "" ]];then
         if [[ ${remote_host} = "" || ${presenter_view_app_name} = "" ]];then
             echo "please check your param_configure.conf to make sure that parameters remote_host and  presenter_view_app_name must have a value"
